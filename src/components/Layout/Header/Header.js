@@ -1,3 +1,4 @@
+import CartButton from '../../Cart/CartButton';
 import classes from './Header.module.css';
 
 import Logo from './Logo';
@@ -7,6 +8,7 @@ const Header = () => {
 	return (
 		<header className={classes.header}>
 			<Logo />
+			<CartButton />
 			<Navigation />
 		</header>
 	);
