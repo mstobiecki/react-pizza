@@ -1,7 +1,8 @@
-import CartButton from '../../Cart/CartButton';
 import classes from './Header.module.css';
 
-import Logo from './Logo';
+import CartButton from '../../Cart/CartButton';
+
+import Logo from '../../UI/Logo';
 import Navigation from './Navigation';
 
 const Header = () => {

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
+import { List, X } from '@phosphor-icons/react';
+
 import classes from './Navigation.module.css';
-import { List, X, ShoppingCart } from '@phosphor-icons/react';
 
 const Navigation = () => {
 	const [navigationToggle, setNavigationToggle] = useState(false);

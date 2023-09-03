@@ -1,5 +1,7 @@
-import { ShoppingCart } from '@phosphor-icons/react';
 import classes from './CartButton.module.css';
+
+import { ShoppingCart } from '@phosphor-icons/react';
+
 const CartButton = () => {
 	return (
 		<button className={classes.cart}>
