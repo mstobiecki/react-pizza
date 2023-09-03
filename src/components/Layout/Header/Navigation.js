@@ -1,18 +1,29 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import classes from './Navigation.module.css';
-import { List } from '@phosphor-icons/react';
+import { List, X } from '@phosphor-icons/react';
 
 const Navigation = () => {
-	const [navigationOpen, setNavigationOpen] = useState(false);
+	const [navigationToggle, setNavigationToggle] = useState(false);
+	const [navigationIsOpen, setNavigationIsOpen] = useState(false);
 
-	const navigationHandler = (event) => {
-		event.preventDefault();
-		setNavigationOpen((prevState) => !prevState);
+	const navigationHandler = () => {
+		setNavigationToggle((prevState) => !prevState);
 	};
 
-	const navigationClasses = navigationOpen
+	useEffect(() => {
+		if (navigationToggle) setNavigationIsOpen(true);
+		else setNavigationIsOpen(false);
+	}, [navigationToggle]);
+
+	const navigationClasses = navigationToggle
 		? `${classes['navigation-wrapper']} ${classes['navigation-open']}`
 		: `${classes['navigation-wrapper']}`;
+
+	const navigationChangeIcon = navigationIsOpen ? (
+		<X className={classes['navigation-button']} />
+	) : (
+		<List className={classes['navigation-button']} />
+	);
 
 	return (
 		<nav>
@@ -48,7 +59,7 @@ const Navigation = () => {
 				onClick={navigationHandler}
 				className={classes['navigation-control']}
 				type='button'>
-				<List className={classes['navigation-button']} />
+				{navigationChangeIcon}
 			</button>
 		</nav>
 	);
