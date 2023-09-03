@@ -1,4 +1,4 @@
-.navigation {
+.navigation-wrapper {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -39,6 +39,7 @@
 }
 
 .navigation-control {
+	display: flex;
 	padding: 0.5rem;
 	border: none;
 	z-index: 200;
@@ -46,6 +47,6 @@
 }
 
 .navigation-button {
-	display: block;
 	font-size: 3rem;
+	z-index: 200;
 }

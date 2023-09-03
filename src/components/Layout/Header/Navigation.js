@@ -1,21 +1,22 @@
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 import classes from './Navigation.module.css';
 import { List } from '@phosphor-icons/react';
 
 const Navigation = () => {
 	const [navigationOpen, setNavigationOpen] = useState(false);
 
-	const navigationHandler = () => {
+	const navigationHandler = (event) => {
+		event.preventDefault();
 		setNavigationOpen((prevState) => !prevState);
 	};
 
 	const navigationClasses = navigationOpen
-		? `${classes.navigation} ${classes['navigation-open']}`
-		: `${classes.navigation}`;
+		? `${classes['navigation-wrapper']} ${classes['navigation-open']}`
+		: `${classes['navigation-wrapper']}`;
 
 	return (
-		<Fragment>
-			<nav className={navigationClasses}>
+		<nav>
+			<div className={navigationClasses}>
 				<ul className={classes['navigation-list']}>
 					<li className={classes['navigation-item']}>
 						<a
@@ -42,14 +43,14 @@ const Navigation = () => {
 						</a>
 					</li>
 				</ul>
-			</nav>
+			</div>
 			<button
 				onClick={navigationHandler}
 				className={classes['navigation-control']}
 				type='button'>
 				<List className={classes['navigation-button']} />
 			</button>
-		</Fragment>
+		</nav>
 	);
 };
 
