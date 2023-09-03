@@ -1,0 +1,51 @@
+.navigation {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	pointer-events: none;
+	visibility: hidden;
+	transform: translateX(100%);
+	backdrop-filter: blur(10px);
+	background-color: rgba(238, 236, 236, 0.97);
+	transition: all 0.5s;
+	z-index: 100;
+}
+
+.navigation-open {
+	opacity: 1;
+	pointer-events: auto;
+	visibility: visible;
+	transform: translateX(0%);
+}
+
+.navigation-list {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+.navigation-item {
+	list-style: none;
+}
+.navigation-link {
+	font-size: 3rem;
+	text-decoration: none;
+	color: #212529;
+}
+
+.navigation-control {
+	padding: 0.5rem;
+	border: none;
+	z-index: 200;
+	background-color: transparent;
+}
+
+.navigation-button {
+	display: block;
+	font-size: 3rem;
+}
