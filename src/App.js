@@ -2,13 +2,17 @@ import { Fragment } from 'react';
 import './App.css';
 
 import Header from './components/Layout/Header/Header';
-import Main from './components/Layout/Main/Main';
+import Hero from './components/Layout/Hero/Hero';
+import Offer from './components/Layout/Offer/Offer';
 
 const App = () => {
 	return (
 		<Fragment>
 			<Header />
-			<Main />
+			<main>
+				<Hero />
+				<Offer />
+			</main>
 		</Fragment>
 	);
 };

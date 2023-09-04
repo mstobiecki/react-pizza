@@ -1,0 +1,36 @@
+.container {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	gap: 3rem;
+	margin-top: 4rem;
+}
+
+.chef,
+.fresh,
+.delivery {
+	display: grid;
+	align-items: center;
+	justify-items: center;
+	gap: 1rem;
+	padding: 3rem;
+}
+
+.fresh {
+	background-color: #fff4e6;
+	border: 3px solid #ffe8cc;
+}
+
+.icon {
+	font-size: 4rem;
+	color: orange;
+}
+
+.title {
+	font-size: 2rem;
+}
+
+.description {
+	font-size: 1.6rem;
+	line-height: 1.3;
+	text-align: center;
+}
