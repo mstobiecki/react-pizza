@@ -3,6 +3,7 @@ import './App.css';
 
 import Header from './components/Layout/Header/Header';
 import Hero from './components/Layout/Hero/Hero';
+import History from './components/Layout/History/History';
 import Offer from './components/Layout/Offer/Offer';
 
 const App = () => {
@@ -11,6 +12,7 @@ const App = () => {
 			<Header />
 			<main>
 				<Hero />
+				<History />
 				<Offer />
 			</main>
 		</Fragment>

@@ -32,15 +32,15 @@ const Navigation = () => {
 				<ul className={classes['navigation-list']}>
 					<li className={classes['navigation-item']}>
 						<a
-							href='#'
+							href='#history'
 							onClick={navigationHandler}
 							className={classes['navigation-link']}>
-							O nas
+							Nasza historia
 						</a>
 					</li>
 					<li className={classes['navigation-item']}>
 						<a
-							href='#'
+							href='#offer'
 							onClick={navigationHandler}
 							className={classes['navigation-link']}>
 							Menu
@@ -48,7 +48,7 @@ const Navigation = () => {
 					</li>
 					<li className={classes['navigation-item']}>
 						<a
-							href='#'
+							href='#contact'
 							onClick={navigationHandler}
 							className={classes['navigation-link']}>
 							Kontakt

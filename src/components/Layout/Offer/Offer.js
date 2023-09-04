@@ -7,7 +7,7 @@ import Card from '../../UI/Card';
 
 const Offer = () => {
 	return (
-		<Section>
+		<Section className={classes.section}>
 			<HeadingText subtitle='nasza oferta' title='Dlaczego nasza pizza?' />
 			<Card>
 				<div className={classes.container}>
