@@ -1,12 +1,13 @@
 import classes from './History.module.css';
 import image from '../../../assets/history.jpg';
 
-import Section from '../../UI/Section';
+import SectionWrapper from '../../UI/SectionWrapper';
 import HeadingText from '../../UI/HeadingText';
 import Card from '../../UI/Card';
+
 const History = () => {
 	return (
-		<Section>
+		<SectionWrapper>
 			<HeadingText subtitle='historia' title='Poznaj nas bliżej' />
 			<Card>
 				<div className={classes.wrapper}>
@@ -26,7 +27,7 @@ const History = () => {
 					</p>
 				</div>
 			</Card>
-		</Section>
+		</SectionWrapper>
 	);
 };
 

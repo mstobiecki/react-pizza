@@ -2,7 +2,7 @@ import classes from './Hero.module.css';
 
 const Hero = () => {
 	return (
-		<setion className={classes.hero}>
+		<section className={classes.hero}>
 			<div className={classes.text}>
 				<h1 className={classes.heading}>
 					Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -15,7 +15,7 @@ const Hero = () => {
 					Sprawdź nasze menu
 				</a>
 			</div>
-		</setion>
+		</section>
 	);
 };
 

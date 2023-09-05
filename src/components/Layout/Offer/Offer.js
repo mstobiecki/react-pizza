@@ -1,13 +1,13 @@
 import classes from './Offer.module.css';
 import { Smiley, Carrot, Truck } from '@phosphor-icons/react';
 
-import Section from '../../UI/Section';
+import SectionWrapper from '../../UI/SectionWrapper';
 import HeadingText from '../../UI/HeadingText';
 import Card from '../../UI/Card';
 
 const Offer = () => {
 	return (
-		<Section className={classes.section}>
+		<SectionWrapper className={classes.section}>
 			<HeadingText subtitle='nasza oferta' title='Dlaczego nasza pizza?' />
 			<Card>
 				<div className={classes.container}>
@@ -49,7 +49,7 @@ const Offer = () => {
 					</div>
 				</div>
 			</Card>
-		</Section>
+		</SectionWrapper>
 	);
 };
 

@@ -1,6 +1,6 @@
 import classes from './Section.module.css';
 
-const Section = (props) => {
+const SectionWrapper = (props) => {
 	return (
 		<section className={`${classes.section} ${props.className}`}>
 			{props.children}
@@ -8,4 +8,4 @@ const Section = (props) => {
 	);
 };
 
-export default Section;
+export default SectionWrapper;
