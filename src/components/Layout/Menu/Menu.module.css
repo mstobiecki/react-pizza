@@ -1,0 +1,32 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	/* padding: 0 2rem; */
+	font-size: 1.6rem;
+	gap: 3rem;
+}
+
+.pizza-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.pizza-item {
+	display: flex;
+	flex-direction: column;
+}
+
+.pizza-name {
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+.pizza-price {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	font-weight: 700;
+}
