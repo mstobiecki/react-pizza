@@ -1,18 +1,43 @@
+import { useEffect, useState } from 'react';
 import classes from './Menu.module.css';
 
 import SectionWrapper from '../../UI/SectionWrapper';
 import HeadingText from '../../UI/HeadingText';
 import Card from '../../UI/Card';
 import MenuItem from './MenuItem';
+import useFetch from '../../../hooks/use-fetch';
 
 const Menu = () => {
+	const [dataFetching, setDataFetching] = useState([]);
+	const { errorRequest, loadingRequest, sendRequest } = useFetch();
+
+	useEffect(() => {
+		const fetchingMenu = (data) => {
+			setDataFetching(data);
+		};
+
+		sendRequest(
+			{
+				url: 'https://react-pizza-1d17a-default-rtdb.europe-west1.firebasedatabase.app/menu.json',
+			},
+			fetchingMenu
+		);
+	}, [sendRequest]);
+
+	const pizzaItems = dataFetching.map((item) => (
+		<MenuItem
+			key={item.id}
+			name={item.name}
+			description={item.description}
+			price={item.price}
+		/>
+	));
+
 	return (
 		<SectionWrapper>
 			<HeadingText subtitle='menu' title='Na co masz chęć?' />
 			<Card>
-				<div className={classes.container}>
-					<MenuItem />
-				</div>
+				<div className={classes.container}>{pizzaItems}</div>
 			</Card>
 		</SectionWrapper>
 	);
