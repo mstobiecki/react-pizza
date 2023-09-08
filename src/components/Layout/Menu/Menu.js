@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { SpinnerGap } from '@phosphor-icons/react';
 import classes from './Menu.module.css';
 
 import SectionWrapper from '../../UI/SectionWrapper';
@@ -33,11 +34,28 @@ const Menu = () => {
 		/>
 	));
 
+	let requestData = pizzaItems;
+
+	if (loadingRequest)
+		requestData = (
+			<div className={classes.information}>
+				<span className={classes.icon}>
+					<SpinnerGap className={classes.icon} />
+				</span>
+			</div>
+		);
+	if (errorRequest)
+		requestData = (
+			<div className={classes.information}>
+				<span className={classes.error}>{errorRequest}</span>
+			</div>
+		);
+
 	return (
 		<SectionWrapper>
 			<HeadingText subtitle='menu' title='Na co masz chęć?' />
 			<Card>
-				<div className={classes.container}>{pizzaItems}</div>
+				<div className={classes.container}>{requestData}</div>
 			</Card>
 		</SectionWrapper>
 	);
