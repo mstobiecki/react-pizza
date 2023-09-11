@@ -7,6 +7,7 @@ import History from './components/Layout/History/History';
 import Offer from './components/Layout/Offer/Offer';
 import Menu from './components/Layout/Menu/Menu';
 import Gastronomy from './components/Layout/Gastronomy/Gastronomy';
+import Contact from './components/Layout/Contact/Contact';
 
 const App = () => {
 	return (
@@ -18,6 +19,7 @@ const App = () => {
 				<Offer />
 				<Menu />
 				<Gastronomy />
+				<Contact />
 			</main>
 		</Fragment>
 	);
