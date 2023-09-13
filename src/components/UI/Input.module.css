@@ -18,3 +18,15 @@
 	resize: vertical;
 	min-height: 15rem;
 }
+
+.invalid {
+	border: 1px solid #b40e0e;
+	background-color: #fddddd;
+}
+
+.input-error {
+	margin: 1rem 0;
+	font-weight: 700;
+	font-size: 1.6rem;
+	color: #b40e0e;
+}
