@@ -3,8 +3,18 @@ import classes from './Form.module.css';
 import Input from '../../UI/Input';
 import useInput from '../../../hooks/use-input';
 
+const validateEmail = (value) => {
+	const validateEmailRegex = /^\S+@\S+\.\S+$/;
+	return validateEmailRegex.test(value);
+};
+
+const validatePhoneNumber = (value) => {
+	const validatePhoneNumberRegex =
+		/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{3})/;
+	return validatePhoneNumberRegex.test(value);
+};
+
 const isNotEmpty = (value) => value.trim() !== '';
-const isEmail = (value) => value.trim().includes('@');
 
 const Form = () => {
 	const {
@@ -21,7 +31,7 @@ const Form = () => {
 		inputChangeHandler: enteredEmailChangeHandler,
 		inputBlurHandler: enteredEmailBlurHandler,
 		inputResetHandler: enteredEmailResetHandler,
-	} = useInput(isEmail);
+	} = useInput(validateEmail);
 
 	const {
 		inputValue: enteredPhone,
@@ -29,7 +39,7 @@ const Form = () => {
 		inputChangeHandler: enteredPhoneChangeHandler,
 		inputBlurHandler: enteredPhoneBlurHandler,
 		inputResetHandler: enteredPhoneResetHandler,
-	} = useInput(isNotEmpty);
+	} = useInput(validatePhoneNumber);
 
 	const {
 		inputValue: enteredMessage,
@@ -41,8 +51,11 @@ const Form = () => {
 
 	const submitHandler = (event) => {
 		event.preventDefault();
-		console.log(enteredName, enteredEmail, enteredPhone, enteredMessage);
+
 		enteredNameResetHandler();
+		enteredEmailResetHandler();
+		enteredPhoneResetHandler();
+		enteredMessageResetHandler();
 	};
 	return (
 		<form onSubmit={submitHandler} className={classes.form}>
@@ -60,7 +73,7 @@ const Form = () => {
 				onBlur={enteredEmailBlurHandler}
 				name='email'
 				label='Podaj email:'
-				type='email'
+				type='text'
 			/>
 			<Input
 				onError={enteredPhoneHasError}
