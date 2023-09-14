@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import classes from './Form.module.css';
 
 import Input from '../../UI/Input';
@@ -14,19 +15,24 @@ const validatePhoneNumber = (value) => {
 	return validatePhoneNumberRegex.test(value);
 };
 
-const isNotEmpty = (value) => value.trim() !== '';
+const validateStringInput = (value) => {
+	const validateStringValue = /(.|\s)*\S(.|\s)*/;
+	return validateStringValue.test(value);
+};
 
 const Form = () => {
+	const [formIsValid, setFormIsValid] = useState(false);
+
 	const {
-		inputValue: enteredName,
+		inputIsValid: enteredNameIsValid,
 		inputHasError: enteredNameHasError,
 		inputChangeHandler: enteredNameChangeHandler,
 		inputBlurHandler: enteredNameBlurHandler,
 		inputResetHandler: enteredNameResetHandler,
-	} = useInput(isNotEmpty);
+	} = useInput(validateStringInput);
 
 	const {
-		inputValue: enteredEmail,
+		inputIsValid: enteredEmailIsValid,
 		inputHasError: enteredEmailHasError,
 		inputChangeHandler: enteredEmailChangeHandler,
 		inputBlurHandler: enteredEmailBlurHandler,
@@ -34,7 +40,7 @@ const Form = () => {
 	} = useInput(validateEmail);
 
 	const {
-		inputValue: enteredPhone,
+		inputIsValid: enteredPhoneIsValid,
 		inputHasError: enteredPhoneHasError,
 		inputChangeHandler: enteredPhoneChangeHandler,
 		inputBlurHandler: enteredPhoneBlurHandler,
@@ -42,15 +48,32 @@ const Form = () => {
 	} = useInput(validatePhoneNumber);
 
 	const {
-		inputValue: enteredMessage,
+		inputIsValid: enteredMessageIsValid,
 		inputHasError: enteredMessageHasError,
 		inputChangeHandler: enteredMessageChangeHandler,
 		inputBlurHandler: enteredMessageBlurHandler,
 		inputResetHandler: enteredMessageResetHandler,
-	} = useInput(isNotEmpty);
+	} = useInput(validateStringInput);
+
+	useEffect(() => {
+		if (
+			enteredNameIsValid &&
+			enteredEmailIsValid &&
+			enteredPhoneIsValid &&
+			enteredMessageIsValid
+		)
+			setFormIsValid(true);
+	}, [
+		enteredNameIsValid,
+		enteredEmailIsValid,
+		enteredPhoneIsValid,
+		enteredMessageIsValid,
+	]);
 
 	const submitHandler = (event) => {
 		event.preventDefault();
+
+		if (!formIsValid) return;
 
 		enteredNameResetHandler();
 		enteredEmailResetHandler();
