@@ -18,3 +18,15 @@ body {
 	overflow-x: hidden;
 	color: #555;
 }
+
+@media (min-width: 36em) {
+	html {
+		font-size: 56.25%;
+	}
+}
+
+@media (min-width: 48em) {
+	html {
+		font-size: 62.5%;
+	}
+}

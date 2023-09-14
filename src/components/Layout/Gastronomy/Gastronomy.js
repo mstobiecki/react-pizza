@@ -23,11 +23,13 @@ const Gastronomy = () => {
 							nulla pariatur. Excepteur sint occaecat cupidatat non proident,
 							sunt in culpa qui officia deserunt mollit anim id est laborum.
 						</p>
-						<img
-							className={classes.image}
-							src={pizzaCake}
-							alt='proces wyrabiania ciasta do pizzy'
-						/>
+						<div className={classes['image-box']}>
+							<img
+								className={classes.image}
+								src={pizzaCake}
+								alt='proces wyrabiania ciasta do pizzy'
+							/>
+						</div>
 					</div>
 					<div className={classes.box}>
 						<h2 className={classes.title}>Przepisy tworzone z miłości</h2>
@@ -40,11 +42,13 @@ const Gastronomy = () => {
 							nulla pariatur. Excepteur sint occaecat cupidatat non proident,
 							sunt in culpa qui officia deserunt mollit anim id est laborum.
 						</p>
-						<img
-							className={classes.image}
-							src={pizzaOven}
-							alt='proces pieczenia pizzy'
-						/>
+						<div className={classes['image-box']}>
+							<img
+								className={classes.image}
+								src={pizzaOven}
+								alt='proces pieczenia pizzy'
+							/>
+						</div>
 					</div>
 				</div>
 			</Card>

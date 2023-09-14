@@ -16,3 +16,24 @@
 	font-size: 1.6rem;
 	line-height: 1.3;
 }
+
+@media (min-width: 48em) {
+	.picture {
+		width: 80%;
+	}
+}
+
+@media (min-width: 62em) {
+	.wrapper {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.picture {
+		width: 80%;
+	}
+
+	.description {
+		font-size: 1.6rem;
+		line-height: 1.6;
+	}
+}
