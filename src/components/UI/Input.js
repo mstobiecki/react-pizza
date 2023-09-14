@@ -1,9 +1,10 @@
+import { forwardRef } from 'react';
 import classes from './Input.module.css';
 
 const hasError = (isError, className) =>
 	isError ? `${className} ${classes.invalid}` : `${className}`;
 
-const Input = (props) => {
+const Input = forwardRef((props, ref) => {
 	const inputHasError = hasError(props.onError, classes.input);
 	const textAreaHasError = hasError(props.onError, classes.textarea);
 
@@ -12,6 +13,7 @@ const Input = (props) => {
 			onChange={props.onChange}
 			onBlur={props.onBlur}
 			className={textAreaHasError}
+			ref={ref}
 		/>
 	) : (
 		<input
@@ -20,6 +22,7 @@ const Input = (props) => {
 			className={inputHasError}
 			id={props.name}
 			type={props.type}
+			ref={ref}
 		/>
 	);
 
@@ -36,6 +39,6 @@ const Input = (props) => {
 			)}
 		</div>
 	);
-};
+});
 
 export default Input;

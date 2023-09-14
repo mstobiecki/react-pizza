@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import classes from './Form.module.css';
 
 import Input from '../../UI/Input';
@@ -22,6 +22,10 @@ const validateStringInput = (value) => {
 
 const Form = () => {
 	const [formIsValid, setFormIsValid] = useState(false);
+	const enteredNameInput = useRef();
+	const enteredEmailInput = useRef();
+	const enteredPhoneInput = useRef();
+	const enteredMessageInput = useRef();
 
 	const {
 		inputIsValid: enteredNameIsValid,
@@ -75,6 +79,11 @@ const Form = () => {
 
 		if (!formIsValid) return;
 
+		enteredNameInput.current.value = '';
+		enteredEmailInput.current.value = '';
+		enteredPhoneInput.current.value = '';
+		enteredMessageInput.current.value = '';
+
 		enteredNameResetHandler();
 		enteredEmailResetHandler();
 		enteredPhoneResetHandler();
@@ -86,6 +95,7 @@ const Form = () => {
 				onError={enteredNameHasError}
 				onChange={enteredNameChangeHandler}
 				onBlur={enteredNameBlurHandler}
+				ref={enteredNameInput}
 				name='name'
 				label='Podaj imię:'
 				type='text'
@@ -94,6 +104,7 @@ const Form = () => {
 				onError={enteredEmailHasError}
 				onChange={enteredEmailChangeHandler}
 				onBlur={enteredEmailBlurHandler}
+				ref={enteredEmailInput}
 				name='email'
 				label='Podaj email:'
 				type='text'
@@ -102,6 +113,7 @@ const Form = () => {
 				onError={enteredPhoneHasError}
 				onChange={enteredPhoneChangeHandler}
 				onBlur={enteredPhoneBlurHandler}
+				ref={enteredPhoneInput}
 				name='phone'
 				label='Podaj telefon:'
 				type='tel'
@@ -110,6 +122,7 @@ const Form = () => {
 				onError={enteredMessageHasError}
 				onChange={enteredMessageChangeHandler}
 				onBlur={enteredMessageBlurHandler}
+				ref={enteredMessageInput}
 				textarea={true}
 				name='message'
 				label='Podaj wiadomość:'
