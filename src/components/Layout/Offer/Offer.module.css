@@ -37,7 +37,11 @@
 	.container {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		gap: 2rem;
+		gap: 3rem;
 		margin-top: 3rem;
+	}
+
+	.description {
+		line-height: 1.6;
 	}
 }

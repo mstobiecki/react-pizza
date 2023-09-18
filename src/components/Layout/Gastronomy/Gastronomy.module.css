@@ -40,3 +40,35 @@
 		align-items: center;
 	}
 }
+
+@media (min-width: 62em) {
+	.box {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
+	.text-box {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+		width: 100%;
+	}
+
+	.image {
+		width: 90%;
+	}
+
+	.title {
+		font-size: 2rem;
+	}
+
+	.description {
+		font-size: 1.6rem;
+		line-height: 1.6;
+	}
+
+	.text-box:nth-child(2) {
+		order: 2;
+	}
+}
