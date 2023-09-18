@@ -38,3 +38,36 @@
 	color: #111;
 	background-color: #fff4e6;
 }
+
+@media (min-width: 62em) {
+	.hero {
+		text-align: center;
+	}
+
+	.text {
+		gap: 4rem;
+	}
+	.heading {
+		font-size: 4.8rem;
+	}
+
+	.paragraph {
+		font-size: 3rem;
+	}
+}
+
+@media (min-width: 87.5em) {
+	.heading {
+		font-size: 5.8rem;
+		line-height: 1.6;
+	}
+
+	.paragraph {
+		font-size: 4rem;
+		line-height: 1.6;
+	}
+
+	.cta {
+		font-size: 2.5rem;
+	}
+}
