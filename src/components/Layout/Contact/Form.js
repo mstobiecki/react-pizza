@@ -22,6 +22,7 @@ const validateStringInput = (value) => {
 
 const Form = () => {
 	const [formIsValid, setFormIsValid] = useState(false);
+	const [formIsComplete, setFormIsComplete] = useState(false);
 	const enteredNameInput = useRef();
 	const enteredEmailInput = useRef();
 	const enteredPhoneInput = useRef();
@@ -77,7 +78,10 @@ const Form = () => {
 	const submitHandler = (event) => {
 		event.preventDefault();
 
-		if (!formIsValid) return;
+		if (!formIsValid) {
+			setFormIsComplete(true);
+			return;
+		}
 
 		enteredNameInput.current.value = '';
 		enteredEmailInput.current.value = '';
@@ -88,6 +92,7 @@ const Form = () => {
 		enteredEmailResetHandler();
 		enteredPhoneResetHandler();
 		enteredMessageResetHandler();
+		setFormIsComplete(false);
 	};
 	return (
 		<form onSubmit={submitHandler} className={classes.form}>
@@ -127,6 +132,11 @@ const Form = () => {
 				name='message'
 				label='Podaj wiadomość:'
 			/>
+			{formIsComplete && (
+				<div className={classes['error-box']}>
+					<p>Uzupełnij poprawnie formlarz przed wysłaniem.</p>
+				</div>
+			)}
 			<div className={classes['button-box']}>
 				<button className={classes.button} type='submit'>
 					Wyślij
