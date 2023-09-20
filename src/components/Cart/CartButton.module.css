@@ -8,4 +8,10 @@
 	font-size: 2rem;
 	border-radius: 1rem;
 	background-color: #fff4e6;
+	transition: background-color 0.3s;
+	cursor: pointer;
+}
+
+.cart:hover {
+	background-color: #ffe8cc;
 }

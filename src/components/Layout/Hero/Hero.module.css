@@ -37,6 +37,12 @@
 	text-decoration: none;
 	color: #111;
 	background-color: #fff4e6;
+	transition: background-color 0.3s;
+	cursor: pointer;
+}
+
+.cta:hover {
+	background-color: #ffe8cc;
 }
 
 @media (min-width: 62em) {
