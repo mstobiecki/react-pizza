@@ -2,9 +2,9 @@ import classes from './CartButton.module.css';
 
 import { ShoppingCart } from '@phosphor-icons/react';
 
-const CartButton = () => {
+const CartButton = (props) => {
 	return (
-		<button className={classes.cart}>
+		<button onClick={props.onShowModal} className={classes.cart}>
 			<ShoppingCart />
 			<span>3</span>
 		</button>

@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import './App.css';
 
 import Header from './components/Layout/Header/Header';
@@ -11,9 +11,14 @@ import Contact from './components/Layout/Contact/Contact';
 import Cart from './components/Cart/Cart';
 
 const App = () => {
+	const [showModal, setShowModal] = useState(false);
+
+	const showModalHandler = () => setShowModal(true);
+	const hiddenModalHandler = () => setShowModal(false);
+
 	return (
 		<Fragment>
-			<Header />
+			<Header onShowModal={showModalHandler} />
 			<main>
 				<Hero />
 				<History />
@@ -21,7 +26,7 @@ const App = () => {
 				<Menu />
 				<Gastronomy />
 				<Contact />
-				<Cart />
+				{showModal && <Cart onCloseModal={hiddenModalHandler} />}
 			</main>
 		</Fragment>
 	);
