@@ -9,15 +9,23 @@ import CartTitle from './CartTitle/CartTitle';
 
 const Cart = (props) => {
 	const ctxCart = useContext(CartContex);
-	console.log(ctxCart);
+
 	const singleItemInCart = ctxCart.items.map((item) => (
 		<CartItem key={item.id} name={item.name} price={item.price} />
 	));
+
+	const products =
+		singleItemInCart.length === 0 ? (
+			<p className={classes.empty}>Brak przedmiotów w koszyku.</p>
+		) : (
+			singleItemInCart
+		);
+
 	return (
 		<Modal onCloseModal={props.onCloseModal}>
 			<div className={classes.container}>
 				<CartTitle />
-				{singleItemInCart}
+				{products}
 				<CartControls onCloseModal={props.onCloseModal} />
 			</div>
 		</Modal>

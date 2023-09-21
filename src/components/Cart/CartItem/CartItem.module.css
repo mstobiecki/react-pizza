@@ -1,8 +1,8 @@
 .item {
-	display: flex;
-	justify-content: space-around;
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	justify-items: center;
 	align-items: center;
-	border-radius: 1rem;
 	font-size: 1.8rem;
 	transition: background-color 0.2s;
 }
@@ -18,8 +18,11 @@
 .button,
 .delete {
 	padding: 0.5rem 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	border: none;
-	font-size: 2rem;
+	font-size: 1.8rem;
 	background-color: transparent;
 	cursor: pointer;
 }

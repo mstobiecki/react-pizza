@@ -12,6 +12,7 @@ const MenuItem = (props) => {
 			id: props.id,
 			name: props.name,
 			price: props.price,
+			amount: props.amount,
 		});
 	};
 	return (

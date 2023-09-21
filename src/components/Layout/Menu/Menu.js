@@ -32,6 +32,7 @@ const Menu = () => {
 			name={item.name}
 			description={item.description}
 			price={item.price}
+			amount={1}
 		/>
 	));
 

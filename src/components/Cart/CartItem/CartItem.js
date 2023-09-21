@@ -13,10 +13,10 @@ const CartItem = (props) => {
 			<button className={classes.button}>
 				<XCircle />
 			</button>
-			<span className={classes.price}>{props.price} zł</span>
-			<span className={classes.delete}>
+			<p className={classes.price}>{props.price} zł</p>
+			<button className={classes.delete}>
 				<Trash />
-			</span>
+			</button>
 		</div>
 	);
 };
