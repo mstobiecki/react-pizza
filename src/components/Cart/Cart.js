@@ -8,8 +8,16 @@ import {
 } from '@phosphor-icons/react';
 
 import Modal from '../UI/Modal';
+import { useContext } from 'react';
+import CartContex from '../../store/cart-context';
+import CartItem from './CartItem';
 
 const Cart = (props) => {
+	const ctxCart = useContext(CartContex);
+	console.log(ctxCart);
+	const singleItemInCart = ctxCart.items.map((item) => (
+		<CartItem key={item.id} name={item.name} price={item.price} />
+	));
 	return (
 		<Modal onCloseModal={props.onCloseModal}>
 			<div className={classes.container}>
@@ -19,51 +27,7 @@ const Cart = (props) => {
 					</span>
 					Co dziś dobrego zjesz?
 				</h2>
-				<div className={classes.item}>
-					<Pizza className={classes.icon} />
-					<h3 className={classes.title}>Pizza Name</h3>
-					<button className={classes.button}>
-						<PlusCircle />
-					</button>
-					<span className={classes.count}>3</span>
-					<button className={classes.button}>
-						<XCircle />
-					</button>
-					<span className={classes.price}>23 zł</span>
-					<span className={classes.delete}>
-						<Trash />
-					</span>
-				</div>
-				<div className={classes.item}>
-					<Pizza className={classes.icon} />
-					<h2 className={classes.title}>Pizza Name</h2>
-					<button className={classes.button}>
-						<PlusCircle />
-					</button>
-					<span className={classes.count}>3</span>
-					<button className={classes.button}>
-						<XCircle />
-					</button>
-					<span className={classes.price}>23 zł</span>
-					<span className={classes.delete}>
-						<Trash />
-					</span>
-				</div>
-				<div className={classes.item}>
-					<Pizza className={classes.icon} />
-					<h2 className={classes.title}>Pizza Name</h2>
-					<button className={classes.button}>
-						<PlusCircle />
-					</button>
-					<span className={classes.count}>3</span>
-					<button className={classes.button}>
-						<XCircle />
-					</button>
-					<span className={classes.price}>23 zł</span>
-					<span className={classes.delete}>
-						<Trash />
-					</span>
-				</div>
+				{singleItemInCart}
 				<div className={classes.controls}>
 					<button onClick={props.onCloseModal} className={classes.close}>
 						Zamknij

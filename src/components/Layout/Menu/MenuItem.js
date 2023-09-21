@@ -9,6 +9,7 @@ const MenuItem = (props) => {
 
 	const addItemToCartHandler = () => {
 		ctxCart.addItem({
+			id: props.id,
 			name: props.name,
 			price: props.price,
 		});

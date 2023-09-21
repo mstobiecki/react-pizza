@@ -42,7 +42,7 @@ const CartProvider = (props) => {
 		removeItem: removeItemHandler,
 		clearCart: clearCartHandler,
 	};
-	console.log(cartContex);
+
 	return (
 		<CartContex.Provider value={cartContex}>
 			{props.children}
