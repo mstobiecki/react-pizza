@@ -10,8 +10,18 @@ import CartTitle from './CartTitle/CartTitle';
 const Cart = (props) => {
 	const ctxCart = useContext(CartContex);
 
+	const removeItemFromCart = (id) => {
+		ctxCart.removeItem(id);
+	};
+
 	const singleItemInCart = ctxCart.items.map((item) => (
-		<CartItem key={item.id} name={item.name} price={item.price} />
+		<CartItem
+			onRemoveItem={removeItemFromCart.bind(null, item.id)}
+			key={item.id}
+			id={item.id}
+			name={item.name}
+			price={item.price}
+		/>
 	));
 
 	const products =

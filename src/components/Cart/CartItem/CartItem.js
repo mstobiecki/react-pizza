@@ -14,7 +14,7 @@ const CartItem = (props) => {
 				<XCircle />
 			</button>
 			<p className={classes.price}>{props.price} zł</p>
-			<button className={classes.delete}>
+			<button onClick={props.onRemoveItem} className={classes.delete}>
 				<Trash />
 			</button>
 		</div>
