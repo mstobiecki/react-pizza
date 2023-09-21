@@ -1,16 +1,11 @@
 import classes from './Cart.module.css';
-import {
-	Pizza,
-	XCircle,
-	PlusCircle,
-	Trash,
-	Basket,
-} from '@phosphor-icons/react';
+import { useContext } from 'react';
 
 import Modal from '../UI/Modal';
-import { useContext } from 'react';
 import CartContex from '../../store/cart-context';
-import CartItem from './CartItem';
+import CartItem from './CartItem/CartItem';
+import CartControls from './CartControls/CartControls';
+import CartTitle from './CartTitle/CartTitle';
 
 const Cart = (props) => {
 	const ctxCart = useContext(CartContex);
@@ -21,19 +16,9 @@ const Cart = (props) => {
 	return (
 		<Modal onCloseModal={props.onCloseModal}>
 			<div className={classes.container}>
-				<h2 className={classes.cart}>
-					<span>
-						<Basket className={classes.basket} />
-					</span>
-					Co dziś dobrego zjesz?
-				</h2>
+				<CartTitle />
 				{singleItemInCart}
-				<div className={classes.controls}>
-					<button onClick={props.onCloseModal} className={classes.close}>
-						Zamknij
-					</button>
-					<button className={classes.order}>Zamów</button>
-				</div>
+				<CartControls onCloseModal={props.onCloseModal} />
 			</div>
 		</Modal>
 	);

@@ -1,0 +1,29 @@
+.item {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	border-radius: 1rem;
+	font-size: 1.8rem;
+	transition: background-color 0.2s;
+}
+
+.icon {
+	display: none;
+}
+
+.title {
+	font-size: 1.6rem;
+}
+
+.button,
+.delete {
+	padding: 0.5rem 1rem;
+	border: none;
+	font-size: 2rem;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.item:hover {
+	background-color: #ffe066;
+}

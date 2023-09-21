@@ -1,12 +1,5 @@
-import {
-	Pizza,
-	XCircle,
-	PlusCircle,
-	Trash,
-	Basket,
-} from '@phosphor-icons/react';
-
-import classes from './Cart.module.css';
+import classes from './CartItem.module.css';
+import { Pizza, XCircle, PlusCircle, Trash } from '@phosphor-icons/react';
 
 const CartItem = (props) => {
 	return (
