@@ -2,11 +2,23 @@ import { useReducer } from 'react';
 import CartContex from './cart-context';
 
 const initialCartState = {
-	items: 0,
+	items: [],
 	totalAmount: 0,
 };
 
-const cartReducer = (state, action) => {};
+const cartReducer = (state, action) => {
+	if (action.type === 'ADD_ITEM') {
+		const itemsInCart = state.items.concat(action.item);
+		const totalAmountInCart = state.totalAmount + action.item.price;
+
+		return {
+			items: itemsInCart,
+			totalAmount: totalAmountInCart,
+		};
+	}
+
+	return initialCartState;
+};
 
 const CartProvider = (props) => {
 	const [cartState, dispatchCart] = useReducer(cartReducer, initialCartState);
@@ -30,6 +42,7 @@ const CartProvider = (props) => {
 		removeItem: removeItemHandler,
 		clearCart: clearCartHandler,
 	};
+	console.log(cartContex);
 	return (
 		<CartContex.Provider value={cartContex}>
 			{props.children}
