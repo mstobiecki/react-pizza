@@ -9,6 +9,9 @@ import CartTitle from './CartTitle/CartTitle';
 
 const Cart = (props) => {
 	const ctxCart = useContext(CartContex);
+	console.log(ctxCart);
+
+	const addItemQuantity = () => {};
 
 	const removeItemFromCart = (id) => {
 		ctxCart.removeItem(id);
@@ -21,6 +24,7 @@ const Cart = (props) => {
 			id={item.id}
 			name={item.name}
 			price={item.price}
+			quantity={item.amount}
 		/>
 	));
 

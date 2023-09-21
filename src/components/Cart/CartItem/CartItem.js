@@ -9,7 +9,7 @@ const CartItem = (props) => {
 			<button className={classes.button}>
 				<PlusCircle />
 			</button>
-			<span className={classes.count}>3</span>
+			<span className={classes.quantity}>{props.quantity}</span>
 			<button className={classes.button}>
 				<XCircle />
 			</button>

@@ -21,9 +21,9 @@ const App = () => {
 		<CartProvider>
 			<Header onShowModal={showModalHandler} />
 			<main>
-				<Hero />
-				<History />
-				<Offer />
+				{/* <Hero />
+					<History />
+					<Offer /> */}
 				<Menu />
 				<Gastronomy />
 				<Contact />

@@ -8,11 +8,29 @@ const initialCartState = {
 
 const cartReducer = (state, action) => {
 	if (action.type === 'ADD_ITEM') {
-		const itemsInCart = state.items.concat(action.item);
+		// const itemsInCart = state.items.concat(action.item);
 		const totalAmountInCart = state.totalAmount + action.item.price;
 
+		const existingItem = state.items.findIndex(
+			(item) => item.id === action.item.id
+		);
+
+		const existingPizza = state.items[existingItem];
+		let updatedItems;
+		if (existingPizza) {
+			const updatePizza = {
+				...existingPizza,
+				totalAmount: state.totalAmount + existingPizza.price,
+				amount: (existingPizza.amount += 1),
+			};
+			updatedItems = [...state.items];
+			updatedItems[existingItem] = updatePizza;
+		} else {
+			updatedItems = state.items.concat(action.item);
+		}
+
 		return {
-			items: itemsInCart,
+			items: updatedItems,
 			totalAmount: totalAmountInCart,
 		};
 	}
@@ -51,7 +69,8 @@ const CartProvider = (props) => {
 		removeItem: removeItemHandler,
 		clearCart: clearCartHandler,
 	};
-
+	console.log(cartState.items);
+	console.log(cartState.totalAmount);
 	return (
 		<CartContex.Provider value={cartContex}>
 			{props.children}
