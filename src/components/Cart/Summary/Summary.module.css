@@ -1,0 +1,8 @@
+.summary {
+	display: flex;
+	justify-content: center;
+}
+
+.total {
+	font-size: 1.6rem;
+}

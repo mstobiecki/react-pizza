@@ -6,12 +6,20 @@ import CartContex from '../../store/cart-context';
 import CartItem from './CartItem/CartItem';
 import CartControls from './CartControls/CartControls';
 import CartTitle from './CartTitle/CartTitle';
+import Summary from './Summary/Summary';
 
 const Cart = (props) => {
 	const ctxCart = useContext(CartContex);
-	console.log(ctxCart);
 
-	const addItemQuantity = () => {};
+	const emptyCart = ctxCart.items.length === 0;
+
+	const addItemQuantity = (item) => {
+		ctxCart.addItem(item);
+	};
+
+	const deleteItemQuantity = (id) => {
+		ctxCart.deleteItem(id);
+	};
 
 	const removeItemFromCart = (id) => {
 		ctxCart.removeItem(id);
@@ -19,6 +27,8 @@ const Cart = (props) => {
 
 	const singleItemInCart = ctxCart.items.map((item) => (
 		<CartItem
+			onDeleteItemQuantity={deleteItemQuantity.bind(null, item.id)}
+			onAddItemQuantity={addItemQuantity.bind(null, item)}
 			onRemoveItem={removeItemFromCart.bind(null, item.id)}
 			key={item.id}
 			id={item.id}
@@ -40,7 +50,8 @@ const Cart = (props) => {
 			<div className={classes.container}>
 				<CartTitle />
 				{products}
-				<CartControls onCloseModal={props.onCloseModal} />
+				{!emptyCart && <Summary totalCoast={ctxCart.totalAmount} />}
+				<CartControls emptyCart={emptyCart} onCloseModal={props.onCloseModal} />
 			</div>
 		</Modal>
 	);

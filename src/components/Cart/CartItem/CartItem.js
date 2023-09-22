@@ -6,11 +6,11 @@ const CartItem = (props) => {
 		<div className={classes.item}>
 			<Pizza className={classes.icon} />
 			<h3 className={classes.title}>{props.name}</h3>
-			<button className={classes.button}>
+			<button onClick={props.onAddItemQuantity} className={classes.button}>
 				<PlusCircle />
 			</button>
 			<span className={classes.quantity}>{props.quantity}</span>
-			<button className={classes.button}>
+			<button onClick={props.onDeleteItemQuantity} className={classes.button}>
 				<XCircle />
 			</button>
 			<p className={classes.price}>{props.price} zł</p>
