@@ -4,13 +4,18 @@ import { Smiley, Carrot, Truck } from '@phosphor-icons/react';
 import SectionWrapper from '../../UI/SectionWrapper';
 import HeadingText from '../../UI/HeadingText';
 import Card from '../../UI/Card';
+import useAnimation from '../../../hooks/use-animation';
 
 const Offer = () => {
+	const { section, animationClasses } = useAnimation('animate__backInRight');
+
 	return (
 		<SectionWrapper className={classes.section}>
 			<HeadingText subtitle='nasza oferta' title='Dlaczego nasza pizza?' />
 			<Card>
-				<div className={classes.container}>
+				<div
+					ref={section}
+					className={`${classes.container} ${animationClasses}`}>
 					<div className={classes.chef}>
 						<span className={classes.icon}>
 							<Smiley />

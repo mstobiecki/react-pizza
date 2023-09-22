@@ -5,14 +5,23 @@ import pizzaOven from '../../../assets/gastronomy-2.jpg';
 import Card from '../../UI/Card';
 import HeadingText from '../../UI/HeadingText';
 import SectionWrapper from '../../UI/SectionWrapper';
+import useAnimation from '../../../hooks/use-animation';
 
 const Gastronomy = () => {
+	const { section: ingredients, animationClasses: ingredientsClasses } =
+		useAnimation('animate__backInLeft');
+	const { section: recipes, animationClasses: recipesClasses } = useAnimation(
+		'animate__backInRight'
+	);
+
 	return (
 		<SectionWrapper className={classes.gastronomy}>
 			<HeadingText subtitle='jakość' title='Jak przyrządzamy nasze pizze?' />
 			<Card>
 				<div className={classes.wrapper}>
-					<div className={classes.box}>
+					<div
+						ref={ingredients}
+						className={`${classes.box} ${ingredientsClasses}`}>
 						<div className={classes['text-box']}>
 							<h2 className={classes.title}>Składniki najwyższej jakości</h2>
 							<p className={classes.description}>
@@ -35,7 +44,7 @@ const Gastronomy = () => {
 							/>
 						</div>
 					</div>
-					<div className={classes.box}>
+					<div ref={recipes} className={`${classes.box} ${recipesClasses}`}>
 						<div className={classes['text-box']}>
 							<h2 className={classes.title}>Przepisy tworzone z miłości</h2>
 							<p className={classes.description}>
