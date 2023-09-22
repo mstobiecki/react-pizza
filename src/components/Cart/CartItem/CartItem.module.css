@@ -31,3 +31,14 @@
 .item:hover {
 	background-color: #ffe066;
 }
+
+@media (min-width: 62em) {
+	.item {
+		grid-template-columns: repeat(7, 1fr);
+	}
+
+	.icon {
+		display: block;
+		font-size: 2.5rem;
+	}
+}

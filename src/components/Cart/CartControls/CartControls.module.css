@@ -5,13 +5,16 @@
 	font-size: 1.6rem;
 }
 
+.order {
+	background-color: #ffe066;
+}
+
 .close,
 .order {
 	padding: 0.5rem 1rem;
 	margin-bottom: 2rem;
 	border: none;
 	border-radius: 1rem;
-	background-color: #ffe066;
 	transition: background-color 0.3s;
 	cursor: pointer;
 }

@@ -5,11 +5,12 @@ const Hero = () => {
 		<section className={classes.hero}>
 			<div className={classes.text}>
 				<h1 className={classes.heading}>
-					Lorem Ipsum is simply dummy text of the printing and typesetting
+					React Pizza to raj dla smakoszy pizzy. Zapraszamy na kulinarną
+					przygodę
 				</h1>
 				<p className={classes.paragraph}>
-					It is a long established fact that a reader will be distracted by the
-					readable content of a page when looking at its layout.
+					Gotujemy z pasją, serwując autentyczne włoskie smaki na Twoim talerzu.
+					Dołącz do naszej kulinarniej podróży już teraz
 				</p>
 				<a href='#offer' className={classes.cta}>
 					Sprawdź nasze menu

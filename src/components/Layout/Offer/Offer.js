@@ -17,10 +17,10 @@ const Offer = () => {
 						</span>
 						<h3 className={classes.title}>Świetny kucharz</h3>
 						<p className={classes.description}>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-							eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-							enim ad minim veniam, quis nostrud exercitation ullamco laboris
-							nisi ut aliquip ex ea commodo consequat.
+							Jego kuchnia to nieustający taniec smaków i aromatów, gdzie
+							tradycyjne techniki łączą się z nowoczesnym podejściem do
+							gotowania. Nasz kucharz potrafi przywrócić życie każdemu
+							składnikowi, tworząc dania, które są prawdziwymi dziełami sztuki.
 						</p>
 					</div>
 					<div className={classes.fresh}>
@@ -29,10 +29,11 @@ const Offer = () => {
 						</span>
 						<h3 className={classes.title}>Świeża żywność</h3>
 						<p className={classes.description}>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-							eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-							enim ad minim veniam, quis nostrud exercitation ullamco laboris
-							nisi ut aliquip ex ea commodo consequat.
+							Świeżość to dla nas więcej niż zasada - to nasza filozofia.
+							Chcemy, aby każdy posiłek, który podajemy, był nie tylko smaczny,
+							ale także zdrowy i pożywny. Dlatego też dbamy o to, aby nasza
+							żywność była jak najbliżej natury, dostarczając Wam to, co
+							najlepsze.
 						</p>
 					</div>
 					<div className={classes.delivery}>
@@ -41,10 +42,10 @@ const Offer = () => {
 						</span>
 						<h3 className={classes.title}>Szybka dostawa</h3>
 						<p className={classes.description}>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-							eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-							enim ad minim veniam, quis nostrud exercitation ullamco laboris
-							nisi ut aliquip ex ea commodo consequat.
+							Niezależnie od okazji - czy to rodzinnego obiadu, randki, imprezy
+							lub wieczornego przekąszenia - nasza szybka dostawa zawsze jest
+							gotowa, aby dostarczyć Ci najlepsze smaki z naszego menu. Wybierz
+							naszą usługę dostawy i przekonaj się!
 						</p>
 					</div>
 				</div>

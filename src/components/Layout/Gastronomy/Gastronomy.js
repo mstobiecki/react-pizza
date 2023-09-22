@@ -16,13 +16,15 @@ const Gastronomy = () => {
 						<div className={classes['text-box']}>
 							<h2 className={classes.title}>Składniki najwyższej jakości</h2>
 							<p className={classes.description}>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-								enim ad minim veniam, quis nostrud exercitation ullamco laboris
-								nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-								in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-								nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-								sunt in culpa qui officia deserunt mollit anim id est laborum.
+								W naszej kuchni jakość to fundament, na którym budujemy naszą
+								kulinarną reputację. Zawsze wybieramy składniki najwyższej
+								jakości, aby dostarczać naszym klientom niezapomniane
+								doświadczenia smakowe, które wyróżniają nas od innych. Nasza
+								pasja do składników najwyższej jakości zaczyna się od wyboru
+								dostawców, z którymi utrzymujemy bliskie relacje oparte na
+								zaufaniu. Współpracujemy z lokalnymi rolnikami i dostawcami, aby
+								mieć pewność, że nasze warzywa, owoce, mięso i ryby są świeże,
+								naturalne i pochodzą z odpowiedzialnych źródeł.
 							</p>
 						</div>
 						<div className={classes['image-box']}>
@@ -37,13 +39,14 @@ const Gastronomy = () => {
 						<div className={classes['text-box']}>
 							<h2 className={classes.title}>Przepisy tworzone z miłości</h2>
 							<p className={classes.description}>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-								enim ad minim veniam, quis nostrud exercitation ullamco laboris
-								nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-								in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-								nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-								sunt in culpa qui officia deserunt mollit anim id est laborum.
+								Nasze przepisy to nie tylko zbiór składników i instrukcji - to
+								historie, które opowiadają o pasji, staranności i oddaniu, które
+								wkładamy w każdy posiłek. Każde danie jest wynikiem naszych
+								kulinarnych eksperymentów i poszukiwań, mających na celu
+								stworzenie smaku, który rozkwita na podniebieniu. Nasze dania to
+								nie tylko połączenie smaków, to wyraz naszej miłości do sztuki
+								kulinarnej. Każdy detal jest dopracowany, każdy smak jest
+								wyważony, a prezentacja potrawy jest estetyczna i zachwycająca.
 							</p>
 						</div>
 						<div className={classes['image-box']}>

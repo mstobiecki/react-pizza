@@ -17,13 +17,14 @@ const History = () => {
 						alt='Wnętrze pizzeri zapełnione stolikami'
 					/>
 					<p className={classes.description}>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-						ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-						aliquip ex ea commodo consequat. Duis aute irure dolor in
-						reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-						pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-						culpa qui officia deserunt mollit anim id est laborum.
+						Witajcie w Pizzerii React Pizza, gdzie każda kawałek smakuje jak
+						podróż do słonecznych Włoch! Nasza historia rozpoczęła się kilka
+						dekad temu, kiedy to pasja do autentycznej włoskiej kuchni skradła
+						nasze serca. Dzięki naszemu zaangażowaniu w zachowanie tradycyjnych
+						smaków i składników, nasze dania są prawdziwą ucztą dla
+						podniebienia. Nasza włoska pizza wyróżnia się cienkim, chrupiącym
+						ciastem i wyjątkowym sosem pomidorowym, a nasze dania makaronowe to
+						prawdziwe dzieła sztuki kulinarnego rzemiosła.
 					</p>
 				</div>
 			</Card>
