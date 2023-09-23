@@ -13,7 +13,7 @@ const Form = () => {
 	const enteredPhoneInput = useRef();
 	const enteredMessageInput = useRef();
 
-	const { validateEmail, validatePhoneNumber, validateStringInput } =
+	const { validateEmail, validatePhoneNumber, validateString } =
 		useValidation();
 
 	const {
@@ -22,7 +22,7 @@ const Form = () => {
 		inputChangeHandler: enteredNameChangeHandler,
 		inputBlurHandler: enteredNameBlurHandler,
 		inputResetHandler: enteredNameResetHandler,
-	} = useInput(validateStringInput);
+	} = useInput(validateString);
 
 	const {
 		inputIsValid: enteredEmailIsValid,
@@ -46,7 +46,7 @@ const Form = () => {
 		inputChangeHandler: enteredMessageChangeHandler,
 		inputBlurHandler: enteredMessageBlurHandler,
 		inputResetHandler: enteredMessageResetHandler,
-	} = useInput(validateStringInput);
+	} = useInput(validateString);
 
 	useEffect(() => {
 		if (

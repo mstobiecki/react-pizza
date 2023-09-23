@@ -1,5 +1,5 @@
 import classes from './Cart.module.css';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 
 import Modal from '../UI/Modal';
 import CartContex from '../../store/cart-context';
@@ -10,8 +10,13 @@ import Summary from './Summary/Summary';
 import CardForm from './CardForm/CardForm';
 
 const Cart = (props) => {
-	const ctxCart = useContext(CartContex);
+	const [orderFoodButton, setOrderFoodButton] = useState(false);
 
+	const orderFoodButtonHandler = () => {
+		setOrderFoodButton(true);
+	};
+
+	const ctxCart = useContext(CartContex);
 	const emptyCart = ctxCart.items.length === 0;
 
 	const addItemQuantity = (item) => {
@@ -52,8 +57,13 @@ const Cart = (props) => {
 				<CartTitle />
 				{products}
 				{!emptyCart && <Summary totalCoast={ctxCart.totalAmount} />}
-				<CardForm />
-				<CartControls emptyCart={emptyCart} onCloseModal={props.onCloseModal} />
+				{orderFoodButton && <CardForm />}
+				<CartControls
+					orderedFood={orderFoodButton}
+					emptyCart={emptyCart}
+					onOrderFood={orderFoodButtonHandler}
+					onCloseModal={props.onCloseModal}
+				/>
 			</div>
 		</Modal>
 	);

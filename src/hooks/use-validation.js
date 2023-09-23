@@ -10,7 +10,12 @@ const useValidation = () => {
 		return validatePhoneNumberRegex.test(value);
 	};
 
-	const validateStringInput = (value) => {
+	const validatePostalCode = (value) => {
+		const validatePostalCodeRegex = /^[0-9]{2}-?[0-9]{3}/;
+		return validatePostalCodeRegex.test(value);
+	};
+
+	const validateString = (value) => {
 		const validateStringRegex = /(.|\s)*\S(.|\s)*/;
 		return validateStringRegex.test(value);
 	};
@@ -18,7 +23,8 @@ const useValidation = () => {
 	return {
 		validateEmail,
 		validatePhoneNumber,
-		validateStringInput,
+		validatePostalCode,
+		validateString,
 	};
 };
 
