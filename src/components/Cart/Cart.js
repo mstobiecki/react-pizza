@@ -7,6 +7,7 @@ import CartItem from './CartItem/CartItem';
 import CartControls from './CartControls/CartControls';
 import CartTitle from './CartTitle/CartTitle';
 import Summary from './Summary/Summary';
+import CardForm from './CardForm/CardForm';
 
 const Cart = (props) => {
 	const ctxCart = useContext(CartContex);
@@ -51,6 +52,7 @@ const Cart = (props) => {
 				<CartTitle />
 				{products}
 				{!emptyCart && <Summary totalCoast={ctxCart.totalAmount} />}
+				<CardForm />
 				<CartControls emptyCart={emptyCart} onCloseModal={props.onCloseModal} />
 			</div>
 		</Modal>

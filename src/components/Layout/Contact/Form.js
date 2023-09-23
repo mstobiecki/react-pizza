@@ -3,22 +3,7 @@ import classes from './Form.module.css';
 
 import Input from '../../UI/Input';
 import useInput from '../../../hooks/use-input';
-
-const validateEmail = (value) => {
-	const validateEmailRegex = /^\S+@\S+\.\S+$/;
-	return validateEmailRegex.test(value);
-};
-
-const validatePhoneNumber = (value) => {
-	const validatePhoneNumberRegex =
-		/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{3})/;
-	return validatePhoneNumberRegex.test(value);
-};
-
-const validateStringInput = (value) => {
-	const validateStringValue = /(.|\s)*\S(.|\s)*/;
-	return validateStringValue.test(value);
-};
+import useValidation from '../../../hooks/use-validation';
 
 const Form = () => {
 	const [formIsValid, setFormIsValid] = useState(false);
@@ -27,6 +12,9 @@ const Form = () => {
 	const enteredEmailInput = useRef();
 	const enteredPhoneInput = useRef();
 	const enteredMessageInput = useRef();
+
+	const { validateEmail, validatePhoneNumber, validateStringInput } =
+		useValidation();
 
 	const {
 		inputIsValid: enteredNameIsValid,
