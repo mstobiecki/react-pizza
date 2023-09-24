@@ -1,14 +1,19 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, useContext } from 'react';
 import classes from './CardForm.module.css';
 
 import Input from '../../UI/Input';
 import useInput from '../../../hooks/use-input';
 import useValidation from '../../../hooks/use-validation';
 import ErrorForm from '../../UI/ErrorForm';
+import useFetch from '../../../hooks/use-fetch';
+import CartContex from '../../../store/cart-context';
 
 const CardForm = () => {
 	const [formIsValid, setFormIsValid] = useState(false);
 	const [formIsComplete, setFormIsComplete] = useState(false);
+	const { errorRequest, loadingRequest, sendRequest } = useFetch();
+	const ctxCart = useContext(CartContex);
+
 	const enteredNameInput = useRef();
 	const enteredPhoneInput = useRef();
 	const enteredCityInput = useRef();
@@ -99,6 +104,23 @@ const CardForm = () => {
 			setFormIsComplete(true);
 			return;
 		}
+
+		sendRequest({
+			url: 'https://react-pizza-1d17a-default-rtdb.europe-west1.firebasedatabase.app/orders.json',
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
+				items: ctxCart.items,
+				userName: enteredName,
+				userPhone: enteredPhone,
+				userCity: enteredCity,
+				userStreet: enteredStreet,
+				userHouse: enteredHouse,
+				userPostalCode: enteredPostalCode,
+			}),
+		});
 
 		enteredNameResetHandler();
 		enteredPhoneResetHandler();
