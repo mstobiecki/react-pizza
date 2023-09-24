@@ -14,7 +14,17 @@ const Menu = () => {
 
 	useEffect(() => {
 		const fetchingMenu = (data) => {
-			setDataFetching(data);
+			const loadedPizza = [];
+
+			for (const [key, value] of Object.entries(data))
+				loadedPizza.push({
+					id: key,
+					name: value.name,
+					description: value.description,
+					price: value.price,
+				});
+
+			setDataFetching(loadedPizza);
 		};
 
 		sendRequest(
