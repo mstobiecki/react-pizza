@@ -1,0 +1,14 @@
+.information {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.error {
+	text-align: center;
+	color: red;
+	padding: 1rem;
+	background-color: #ffe3e3;
+	border-radius: 1rem;
+	font-size: 1.6rem;
+}

@@ -7,6 +7,8 @@ import HeadingText from '../../UI/HeadingText';
 import Card from '../../UI/Card';
 import MenuItem from './MenuItem';
 import useFetch from '../../../hooks/use-fetch';
+import LoadingData from '../../UI/LoadingData';
+import ErrorData from '../../UI/ErrorData';
 
 const Menu = () => {
 	const [dataFetching, setDataFetching] = useState([]);
@@ -48,20 +50,9 @@ const Menu = () => {
 
 	let requestData = pizzaItems;
 
-	if (loadingRequest)
-		requestData = (
-			<div className={classes.information}>
-				<span className={classes.icon}>
-					<SpinnerGap className={classes.icon} />
-				</span>
-			</div>
-		);
-	if (errorRequest)
-		requestData = (
-			<div className={classes.information}>
-				<span className={classes.error}>{errorRequest}</span>
-			</div>
-		);
+	if (loadingRequest) requestData = <LoadingData />;
+
+	if (errorRequest) requestData = <ErrorData errorMessage={errorRequest} />;
 
 	return (
 		<SectionWrapper>

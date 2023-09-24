@@ -17,7 +17,8 @@ const useFetch = () => {
 
 			const responseData = await response.json();
 
-			forwardData(responseData);
+			if (requestConfig.method !== 'POST') forwardData(responseData);
+
 			setLoadingRequest(false);
 		} catch (error) {
 			setLoadingRequest(false);

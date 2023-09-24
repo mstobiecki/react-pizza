@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect, useContext } from 'react';
+import { useRef, useState, useEffect, useContext, Fragment } from 'react';
 import classes from './CardForm.module.css';
 
 import Input from '../../UI/Input';
@@ -7,10 +7,13 @@ import useValidation from '../../../hooks/use-validation';
 import ErrorForm from '../../UI/ErrorForm';
 import useFetch from '../../../hooks/use-fetch';
 import CartContex from '../../../store/cart-context';
+import LoadingData from '../../UI/LoadingData';
+import ErrorData from '../../UI/ErrorData';
 
 const CardForm = () => {
 	const [formIsValid, setFormIsValid] = useState(false);
 	const [formIsComplete, setFormIsComplete] = useState(false);
+	const [sendData, setSendData] = useState(false);
 	const { errorRequest, loadingRequest, sendRequest } = useFetch();
 	const ctxCart = useContext(CartContex);
 
@@ -136,9 +139,12 @@ const CardForm = () => {
 		enteredStreetInput.current.value = '';
 		enteredHouseInput.current.value = '';
 		enteredPostalCodeInput.current.value = '';
+		ctxCart.clearCart();
+
+		setSendData(true);
 	};
 
-	return (
+	const showFormBeforeSendData = (
 		<form onSubmit={submitHandler} className={classes.form}>
 			<Input
 				onError={enteredNameHasError}
@@ -201,6 +207,87 @@ const CardForm = () => {
 				</button>
 			</div>
 		</form>
+	);
+
+	let requestData;
+
+	if (loadingRequest) requestData = <LoadingData />;
+	if (errorRequest) requestData = <ErrorData errorMessage={errorRequest} />;
+
+	return (
+		// <form onSubmit={submitHandler} className={classes.form}>
+		// 	<Input
+		// 		onError={enteredNameHasError}
+		// 		onChange={enteredNameChangeHandler}
+		// 		onBlur={enteredNameBlurHandler}
+		// 		ref={enteredNameInput}
+		// 		name='name'
+		// 		label='Podaj imię:'
+		// 		type='text'
+		// 	/>
+		// 	<Input
+		// 		onError={enteredPhoneHasError}
+		// 		onChange={enteredPhoneChangeHandler}
+		// 		onBlur={enteredPhoneBlurHandler}
+		// 		ref={enteredPhoneInput}
+		// 		name='phone'
+		// 		label='Podaj telefon:'
+		// 		type='tel'
+		// 	/>
+		// 	<Input
+		// 		onError={enteredCityHasError}
+		// 		onChange={enteredCityChangeHandler}
+		// 		onBlur={enteredCityBlurHandler}
+		// 		ref={enteredCityInput}
+		// 		name='city'
+		// 		label='Podaj miasto:'
+		// 		type='text'
+		// 	/>
+		// 	<Input
+		// 		onError={enteredStreetHasError}
+		// 		onChange={enteredStreetChangeHandler}
+		// 		onBlur={enteredStreetBlurHandler}
+		// 		ref={enteredStreetInput}
+		// 		name='street'
+		// 		label='Podaj ulicę:'
+		// 		type='text'
+		// 	/>
+		// 	<Input
+		// 		onError={enteredHouseHasError}
+		// 		onChange={enteredHouseChangeHandler}
+		// 		onBlur={enteredHouseBlurHandler}
+		// 		ref={enteredHouseInput}
+		// 		name='house'
+		// 		label='Podaj numer domu:'
+		// 		type='text'
+		// 	/>
+		// 	<Input
+		// 		onError={enteredPostalCodeHasError}
+		// 		onChange={enteredPostalCodeChangeHandler}
+		// 		onBlur={enteredPostalCodeBlurHandler}
+		// 		ref={enteredPostalCodeInput}
+		// 		name='postalCode'
+		// 		label='Podaj kod pocztowy:'
+		// 		type='text'
+		// 	/>
+		// 	{formIsComplete && <ErrorForm />}
+		// 	<div className={classes.action}>
+		// 		<button className={classes.button} type='submit'>
+		// 			Zamów pizzę 🍕
+		// 		</button>
+		// 	</div>
+		// </form>
+		<Fragment>
+			{!sendData && showFormBeforeSendData}
+			{sendData && requestData}
+			{sendData && !requestData && (
+				<div className={classes.information}>
+					<p className={classes.success}>
+						Zamówienie zostało prawidłowo złożone ✅
+					</p>
+				</div>
+			)}
+		</Fragment>
 	);
 };
 

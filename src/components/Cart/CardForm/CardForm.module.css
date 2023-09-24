@@ -24,3 +24,13 @@
 .button:hover {
 	background-color: #ffe8cc;
 }
+
+.information {
+	text-align: center;
+	padding: 1rem;
+	background-color: #b2f2bb;
+}
+
+.success {
+	font-size: 1.6rem;
+}
