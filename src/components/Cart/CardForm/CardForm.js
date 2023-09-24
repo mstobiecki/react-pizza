@@ -1,11 +1,14 @@
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import classes from './CardForm.module.css';
 
 import Input from '../../UI/Input';
 import useInput from '../../../hooks/use-input';
 import useValidation from '../../../hooks/use-validation';
+import ErrorForm from '../../UI/ErrorForm';
 
 const CardForm = () => {
+	const [formIsValid, setFormIsValid] = useState(false);
+	const [formIsComplete, setFormIsComplete] = useState(false);
 	const enteredNameInput = useRef();
 	const enteredPhoneInput = useRef();
 	const enteredCityInput = useRef();
@@ -17,6 +20,7 @@ const CardForm = () => {
 		useValidation();
 
 	const {
+		inputValue: enteredName,
 		inputIsValid: enteredNameIsValid,
 		inputHasError: enteredNameHasError,
 		inputChangeHandler: enteredNameChangeHandler,
@@ -25,6 +29,7 @@ const CardForm = () => {
 	} = useInput(validateString);
 
 	const {
+		inputValue: enteredPhone,
 		inputIsValid: enteredPhoneIsValid,
 		inputHasError: enteredPhoneHasError,
 		inputChangeHandler: enteredPhoneChangeHandler,
@@ -33,6 +38,7 @@ const CardForm = () => {
 	} = useInput(validatePhoneNumber);
 
 	const {
+		inputValue: enteredCity,
 		inputIsValid: enteredCityIsValid,
 		inputHasError: enteredCityHasError,
 		inputChangeHandler: enteredCityChangeHandler,
@@ -41,6 +47,7 @@ const CardForm = () => {
 	} = useInput(validateString);
 
 	const {
+		inputValue: enteredStreet,
 		inputIsValid: enteredStreetIsValid,
 		inputHasError: enteredStreetHasError,
 		inputChangeHandler: enteredStreetChangeHandler,
@@ -49,6 +56,7 @@ const CardForm = () => {
 	} = useInput(validateString);
 
 	const {
+		inputValue: enteredHouse,
 		inputIsValid: enteredHouseIsValid,
 		inputHasError: enteredHouseHasError,
 		inputChangeHandler: enteredHouseChangeHandler,
@@ -57,6 +65,7 @@ const CardForm = () => {
 	} = useInput(validateString);
 
 	const {
+		inputValue: enteredPostalCode,
 		inputIsValid: enteredPostalCodeIsValid,
 		inputHasError: enteredPostalCodeHasError,
 		inputChangeHandler: enteredPostalCodeChangeHandler,
@@ -64,8 +73,32 @@ const CardForm = () => {
 		inputResetHandler: enteredPostalCodeResetHandler,
 	} = useInput(validatePostalCode);
 
+	useEffect(() => {
+		if (
+			enteredNameIsValid &&
+			enteredPhoneIsValid &&
+			enteredCityIsValid &&
+			enteredStreetIsValid &&
+			enteredHouseIsValid &&
+			enteredPostalCodeIsValid
+		)
+			setFormIsValid(true);
+	}, [
+		enteredNameIsValid,
+		enteredPhoneIsValid,
+		enteredCityIsValid,
+		enteredStreetIsValid,
+		enteredHouseIsValid,
+		enteredPostalCodeIsValid,
+	]);
+
 	const submitHandler = (event) => {
 		event.preventDefault();
+
+		if (!formIsValid) {
+			setFormIsComplete(true);
+			return;
+		}
 
 		enteredNameResetHandler();
 		enteredPhoneResetHandler();
@@ -73,6 +106,7 @@ const CardForm = () => {
 		enteredStreetResetHandler();
 		enteredHouseResetHandler();
 		enteredPostalCodeResetHandler();
+		setFormIsComplete(false);
 
 		enteredNameInput.current.value = '';
 		enteredPhoneInput.current.value = '';
@@ -138,7 +172,12 @@ const CardForm = () => {
 				label='Podaj kod pocztowy:'
 				type='text'
 			/>
-			<button type='submit'>wyślij</button>
+			{formIsComplete && <ErrorForm />}
+			<div className={classes.action}>
+				<button className={classes.button} type='submit'>
+					Zamów pizzę 🍕
+				</button>
+			</div>
 		</form>
 	);
 };

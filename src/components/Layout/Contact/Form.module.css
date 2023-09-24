@@ -22,14 +22,6 @@
 	cursor: pointer;
 }
 
-.error-box {
-	padding: 1rem;
-	background-color: #fa5252;
-	color: #fff;
-	font-weight: 700;
-	font-size: 1.6rem;
-}
-
 .button:hover {
 	background-color: #ffe8cc;
 }

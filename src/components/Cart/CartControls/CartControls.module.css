@@ -9,6 +9,10 @@
 	background-color: #ffe066;
 }
 
+.hidden {
+	display: none;
+}
+
 .close,
 .order {
 	padding: 0.5rem 1rem;

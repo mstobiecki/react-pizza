@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import classes from './Form.module.css';
 
 import Input from '../../UI/Input';
+import ErrorForm from '../../UI/ErrorForm';
 import useInput from '../../../hooks/use-input';
 import useValidation from '../../../hooks/use-validation';
 
@@ -120,11 +121,7 @@ const Form = () => {
 				name='message'
 				label='Podaj wiadomość:'
 			/>
-			{formIsComplete && (
-				<div className={classes['error-box']}>
-					<p>Uzupełnij poprawnie formlarz przed wysłaniem.</p>
-				</div>
-			)}
+			{formIsComplete && <ErrorForm />}
 			<div className={classes['button-box']}>
 				<button className={classes.button} type='submit'>
 					Wyślij
