@@ -1,7 +1,7 @@
 import classes from './Cart.module.css';
 import { useContext, useState } from 'react';
 
-import Modal from '../UI/Modal';
+import Modal from '../UI/Modal/Modal';
 import CartContex from '../../store/cart-context';
 import CartItem from './CartItem/CartItem';
 import CartControls from './CartControls/CartControls';

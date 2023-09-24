@@ -1,9 +1,9 @@
 import classes from './History.module.css';
 import image from '../../../assets/history.jpg';
 
-import SectionWrapper from '../../UI/SectionWrapper';
-import HeadingText from '../../UI/HeadingText';
-import Card from '../../UI/Card';
+import SectionWrapper from '../../UI/SectionWrapper/SectionWrapper';
+import HeadingText from '../../UI/HeadingText/HeadingText';
+import Card from '../../UI/Card/Card';
 import useAnimation from '../../../hooks/use-animation';
 
 const History = () => {

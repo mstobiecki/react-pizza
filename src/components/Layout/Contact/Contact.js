@@ -1,10 +1,10 @@
 import classes from './Contact.module.css';
 
-import HeadingText from '../../UI/HeadingText';
-import SectionWrapper from '../../UI/SectionWrapper';
-import Card from '../../UI/Card';
+import HeadingText from '../../UI/HeadingText/HeadingText';
+import SectionWrapper from '../../UI/SectionWrapper/SectionWrapper';
+import Card from '../../UI/Card/Card';
 import Form from './Form';
-import LocationMap from '../../UI/LocationMap';
+import LocationMap from '../../UI/LocationMap/LocationMap';
 
 const Contact = () => {
 	return (

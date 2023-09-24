@@ -1,4 +1,4 @@
-import classes from './Section.module.css';
+import classes from './SectionWrapper.module.css';
 
 const SectionWrapper = (props) => {
 	return (

@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import classes from './Form.module.css';
 
-import Input from '../../UI/Input';
-import ErrorForm from '../../UI/ErrorForm';
+import Input from '../../UI/Input/Input';
+import ErrorForm from '../../UI/ErrorForm/ErrorForm';
 import useInput from '../../../hooks/use-input';
 import useValidation from '../../../hooks/use-validation';
 

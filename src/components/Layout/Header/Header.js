@@ -2,7 +2,7 @@ import classes from './Header.module.css';
 
 import CartButton from '../../Cart/CartButton/CartButton';
 
-import Logo from '../../UI/Logo';
+import Logo from '../../UI/Logo/Logo';
 import Navigation from './Navigation';
 
 const Header = (props) => {

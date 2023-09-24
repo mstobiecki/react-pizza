@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react';
-import { SpinnerGap } from '@phosphor-icons/react';
 import classes from './Menu.module.css';
 
-import SectionWrapper from '../../UI/SectionWrapper';
-import HeadingText from '../../UI/HeadingText';
-import Card from '../../UI/Card';
+import SectionWrapper from '../../UI/SectionWrapper/SectionWrapper';
+import HeadingText from '../../UI/HeadingText/HeadingText';
+import Card from '../../UI/Card/Card';
 import MenuItem from './MenuItem';
 import useFetch from '../../../hooks/use-fetch';
-import LoadingData from '../../UI/LoadingData';
-import ErrorData from '../../UI/ErrorData';
+import LoadingData from '../../UI/LoadingData/LoadingData';
+import ErrorData from '../../UI/ErrorData/ErrorData';
 
 const Menu = () => {
 	const [dataFetching, setDataFetching] = useState([]);
