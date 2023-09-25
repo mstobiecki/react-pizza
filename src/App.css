@@ -20,6 +20,10 @@ body {
 	color: #555;
 }
 
+section {
+	scroll-margin: 5rem;
+}
+
 @media (min-width: 36em) {
 	html {
 		font-size: 56.25%;
