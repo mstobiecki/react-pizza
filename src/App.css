@@ -20,6 +20,10 @@ body {
 	color: #555;
 }
 
+.overflow-blocked {
+	overflow: hidden;
+}
+
 section {
 	scroll-margin: 5rem;
 }

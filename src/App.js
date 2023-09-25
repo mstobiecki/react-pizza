@@ -14,8 +14,12 @@ import CartProvider from './store/CartProvider';
 const App = () => {
 	const [showModal, setShowModal] = useState(false);
 
-	const showModalHandler = () => setShowModal(true);
-	const hiddenModalHandler = () => setShowModal(false);
+	const showModalHandler = () => {
+		setShowModal(true);
+	};
+	const hiddenModalHandler = () => {
+		setShowModal(false);
+	};
 
 	return (
 		<CartProvider>

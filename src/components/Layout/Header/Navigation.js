@@ -12,8 +12,13 @@ const Navigation = () => {
 	};
 
 	useEffect(() => {
-		if (navigationToggle) setNavigationIsOpen(true);
-		else setNavigationIsOpen(false);
+		if (navigationToggle) {
+			setNavigationIsOpen(true);
+			document.body.classList.add('overflow-blocked');
+		} else {
+			setNavigationIsOpen(false);
+			document.body.classList.remove('overflow-blocked');
+		}
 	}, [navigationToggle]);
 
 	const navigationClasses = navigationToggle

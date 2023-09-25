@@ -55,4 +55,5 @@
 .navigation-button {
 	font-size: 3rem;
 	z-index: 200;
+	cursor: pointer;
 }
