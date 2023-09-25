@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+## Project Overview 🎉
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p>A fictional pizzeria website was created by me. The site has a menu added from Firebase and there is an option to send an order to the Firebase server. The site uses Context to store the shopping cart. I created four hookups that are responsible for fetching and sending data, displaying inputs, creating animations and for validation. The site is fully responsive for all devices.</p>
 
-## Available Scripts
+## Tech/framework used 🔧
 
-In the project directory, you can run:
+[![My Skills](https://skillicons.dev/icons?i=html,css,js,react,firebase,git,netlify&perline=7)](https://skillicons.dev)
 
-### `npm start`
+## Screenshots 📺
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<p align="center">
+    <img src="./src/assets/s1.png" alt="Screenshot">
+</p>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<p align="center">
+       <img src="./src/assets/s2.png" alt="Screenshot">
+</p>
 
-### `npm test`
+<p align="center">
+    <img src="./src/assets/s3.png" alt="Screenshot">
+</p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p align="center">
+    <img src="./src/assets/s4.png" alt="Screenshot">
+</p>
 
-### `npm run build`
+<p align="center">
+    <img src="./src/assets/s5.png" alt="Screenshot">
+</p>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p align="center">
+    <img src="./src/assets/s6.png" alt="Screenshot">
+</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<p align="center">
+    <img src="./src/assets/s7.png" alt="Screenshot">
+</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installation 💾
+`git clone https://github.com/mstobiecki/react-pizza.git` and npm run start
 
-### `npm run eject`
+## Available scripts
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+| Command        | Description | 
+| -------------- | ----------- | 
+| `npm run start` | Run development server    |     
+| `npm run build` | Run application building    |     
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Live 📍
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<a href="https://react-pizza-mstobiecki.netlify.app/">https://react-pizza-mstobiecki.netlify.app/</a>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3a415a1c-7990-473c-b3b8-9caa14fd49a2/deploy-status)](https://app.netlify.com/sites/react-pizza-mstobiecki/deploys)
