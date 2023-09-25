@@ -2,7 +2,9 @@ import classes from './SectionWrapper.module.css';
 
 const SectionWrapper = (props) => {
 	return (
-		<section className={`${classes.section} ${props.className || ''}`}>
+		<section
+			id={props.id || ''}
+			className={`${classes.section} ${props.className || ''}`}>
 			{props.children}
 		</section>
 	);

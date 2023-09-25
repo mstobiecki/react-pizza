@@ -54,7 +54,7 @@ const Menu = () => {
 	if (errorRequest) requestData = <ErrorData errorMessage={errorRequest} />;
 
 	return (
-		<SectionWrapper>
+		<SectionWrapper id='menu'>
 			<HeadingText subtitle='menu' title='Na co masz chęć?' />
 			<Card>
 				<div className={classes.container}>{requestData}</div>

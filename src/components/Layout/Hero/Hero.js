@@ -17,7 +17,7 @@ const Hero = () => {
 					Gotujemy z pasją, serwując autentyczne włoskie smaki na Twoim talerzu.
 					Dołącz do naszej kulinarniej podróży już teraz
 				</p>
-				<a href='#offer' className={classes.cta}>
+				<a href='#menu' className={classes.cta}>
 					Sprawdź nasze menu
 				</a>
 			</div>

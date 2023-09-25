@@ -8,7 +8,7 @@ import LocationMap from '../../UI/LocationMap/LocationMap';
 
 const Contact = () => {
 	return (
-		<SectionWrapper>
+		<SectionWrapper id='contact'>
 			<HeadingText subtitle='kontakt' title='Porozmawiajmy o pizzy' />
 			<Card>
 				<div className={classes.wrapper}>

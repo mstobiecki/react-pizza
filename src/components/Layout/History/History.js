@@ -10,7 +10,7 @@ const History = () => {
 	const { section, animationClasses } = useAnimation('animate__backInLeft');
 
 	return (
-		<SectionWrapper>
+		<SectionWrapper id='history'>
 			<HeadingText subtitle='historia' title='Poznaj nas bliżej' />
 			<Card>
 				<div ref={section} className={`${classes.wrapper} ${animationClasses}`}>

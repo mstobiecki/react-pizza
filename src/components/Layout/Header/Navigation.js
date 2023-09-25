@@ -40,7 +40,7 @@ const Navigation = () => {
 					</li>
 					<li className={classes['navigation-item']}>
 						<a
-							href='#offer'
+							href='#menu'
 							onClick={navigationHandler}
 							className={classes['navigation-link']}>
 							Menu
