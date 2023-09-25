@@ -7,15 +7,15 @@ const CartItem = (props) => {
 			<Pizza className={classes.icon} />
 			<h3 className={classes.title}>{props.name}</h3>
 			<button onClick={props.onAddItemQuantity} className={classes.button}>
-				<PlusCircle />
+				<PlusCircle className={classes.action} />
 			</button>
 			<span className={classes.quantity}>{props.quantity}</span>
 			<button onClick={props.onDeleteItemQuantity} className={classes.button}>
-				<XCircle />
+				<XCircle className={classes.action} />
 			</button>
 			<p className={classes.price}>{props.price} zł</p>
 			<button onClick={props.onRemoveItem} className={classes.delete}>
-				<Trash />
+				<Trash className={classes.action} />
 			</button>
 		</div>
 	);

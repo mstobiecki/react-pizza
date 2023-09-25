@@ -12,6 +12,11 @@
 	cursor: pointer;
 }
 
+.icon,
+.quantity {
+	color: #040404;
+}
+
 .cart:hover {
 	background-color: #ffe8cc;
 }

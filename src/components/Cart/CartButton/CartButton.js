@@ -13,8 +13,8 @@ const CartButton = (props) => {
 
 	return (
 		<button onClick={props.onShowModal} className={classes.cart}>
-			<ShoppingCart />
-			<span>{totalProductsInCart}</span>
+			<ShoppingCart className={classes.icon} />
+			<span className={classes.quantity}>{totalProductsInCart}</span>
 		</button>
 	);
 };

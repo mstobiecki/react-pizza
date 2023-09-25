@@ -35,6 +35,11 @@
 	cursor: pointer;
 }
 
+.icon,
+.price {
+	color: #040404;
+}
+
 .button:hover {
 	background-color: #ffe8cc;
 }
