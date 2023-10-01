@@ -1,30 +1,30 @@
 const useValidation = () => {
-	const validateEmail = (value) => {
+	const isEmail = (value) => {
 		const validateEmailRegex = /^\S+@\S+\.\S+$/;
 		return validateEmailRegex.test(value);
 	};
 
-	const validatePhoneNumber = (value) => {
+	const isPhoneNumber = (value) => {
 		const validatePhoneNumberRegex =
 			/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{3})/;
 		return validatePhoneNumberRegex.test(value);
 	};
 
-	const validatePostalCode = (value) => {
+	const isPostalCode = (value) => {
 		const validatePostalCodeRegex = /^[0-9]{2}-?[0-9]{3}/;
 		return validatePostalCodeRegex.test(value);
 	};
 
-	const validateString = (value) => {
+	const isString = (value) => {
 		const validateStringRegex = /(.|\s)*\S(.|\s)*/;
 		return validateStringRegex.test(value);
 	};
 
 	return {
-		validateEmail,
-		validatePhoneNumber,
-		validatePostalCode,
-		validateString,
+		isEmail,
+		isPhoneNumber,
+		isPostalCode,
+		isString,
 	};
 };
 

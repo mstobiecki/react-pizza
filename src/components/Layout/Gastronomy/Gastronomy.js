@@ -5,7 +5,7 @@ import pizzaOven from '../../../assets/gastronomy-2.jpg';
 import Card from '../../UI/Card/Card';
 import HeadingText from '../../UI/HeadingText/HeadingText';
 import SectionWrapper from '../../UI/SectionWrapper/SectionWrapper';
-import useAnimation from '../../../hooks/use-animation';
+import useAnimation from '../../../hooks/useAnimation';
 
 const Gastronomy = () => {
 	const { section: ingredients, animationClasses: ingredientsClasses } =

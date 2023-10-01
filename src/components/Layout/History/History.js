@@ -4,7 +4,7 @@ import image from '../../../assets/history.jpg';
 import SectionWrapper from '../../UI/SectionWrapper/SectionWrapper';
 import HeadingText from '../../UI/HeadingText/HeadingText';
 import Card from '../../UI/Card/Card';
-import useAnimation from '../../../hooks/use-animation';
+import useAnimation from '../../../hooks/useAnimation';
 
 const History = () => {
 	const { section, animationClasses } = useAnimation('animate__backInLeft');

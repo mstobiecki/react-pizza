@@ -6,16 +6,19 @@ const initialStateInput = {
 };
 
 const inputReducer = (state, action) => {
-	if (action.type === 'VALUE_INPUT')
+	if (action.type === 'VALUE_INPUT') {
 		return {
 			value: action.value,
 			isClicked: state.isClicked,
 		};
-	if (action.type === 'BLUR_INPUT')
+	}
+
+	if (action.type === 'BLUR_INPUT') {
 		return {
 			value: state.value,
 			isClicked: true,
 		};
+	}
 
 	if (action.type === 'RESET_INPUT') return initialStateInput;
 

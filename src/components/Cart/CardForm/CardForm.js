@@ -2,10 +2,10 @@ import { useRef, useState, useEffect, useContext, Fragment } from 'react';
 import classes from './CardForm.module.css';
 
 import Input from '../../UI/Input/Input';
-import useInput from '../../../hooks/use-input';
-import useValidation from '../../../hooks/use-validation';
+import useInput from '../../../hooks/useInput';
+import useValidation from '../../../hooks/useValidation';
 import ErrorForm from '../../UI/ErrorForm/ErrorForm';
-import useFetch from '../../../hooks/use-fetch';
+import useFetch from '../../../hooks/useFetch';
 import CartContex from '../../../store/cart-context';
 import LoadingData from '../../UI/LoadingData/LoadingData';
 import ErrorData from '../../UI/ErrorData/ErrorData';
@@ -24,8 +24,7 @@ const CardForm = () => {
 	const enteredHouseInput = useRef();
 	const enteredPostalCodeInput = useRef();
 
-	const { validatePhoneNumber, validatePostalCode, validateString } =
-		useValidation();
+	const { isPhoneNumber, isPostalCode, isString } = useValidation();
 
 	const {
 		inputValue: enteredName,
@@ -34,7 +33,7 @@ const CardForm = () => {
 		inputChangeHandler: enteredNameChangeHandler,
 		inputBlurHandler: enteredNameBlurHandler,
 		inputResetHandler: enteredNameResetHandler,
-	} = useInput(validateString);
+	} = useInput(isString);
 
 	const {
 		inputValue: enteredPhone,
@@ -43,7 +42,7 @@ const CardForm = () => {
 		inputChangeHandler: enteredPhoneChangeHandler,
 		inputBlurHandler: enteredPhoneBlurHandler,
 		inputResetHandler: enteredPhoneResetHandler,
-	} = useInput(validatePhoneNumber);
+	} = useInput(isPhoneNumber);
 
 	const {
 		inputValue: enteredCity,
@@ -52,7 +51,7 @@ const CardForm = () => {
 		inputChangeHandler: enteredCityChangeHandler,
 		inputBlurHandler: enteredCityBlurHandler,
 		inputResetHandler: enteredCityResetHandler,
-	} = useInput(validateString);
+	} = useInput(isString);
 
 	const {
 		inputValue: enteredStreet,
@@ -61,7 +60,7 @@ const CardForm = () => {
 		inputChangeHandler: enteredStreetChangeHandler,
 		inputBlurHandler: enteredStreetBlurHandler,
 		inputResetHandler: enteredStreetResetHandler,
-	} = useInput(validateString);
+	} = useInput(isString);
 
 	const {
 		inputValue: enteredHouse,
@@ -70,7 +69,7 @@ const CardForm = () => {
 		inputChangeHandler: enteredHouseChangeHandler,
 		inputBlurHandler: enteredHouseBlurHandler,
 		inputResetHandler: enteredHouseResetHandler,
-	} = useInput(validateString);
+	} = useInput(isString);
 
 	const {
 		inputValue: enteredPostalCode,
@@ -79,7 +78,7 @@ const CardForm = () => {
 		inputChangeHandler: enteredPostalCodeChangeHandler,
 		inputBlurHandler: enteredPostalCodeBlurHandler,
 		inputResetHandler: enteredPostalCodeResetHandler,
-	} = useInput(validatePostalCode);
+	} = useInput(isPostalCode);
 
 	useEffect(() => {
 		if (

@@ -8,7 +8,9 @@ const useAnimation = (animateName) => {
 		const animationSection = (entries) => {
 			const [entry] = entries;
 
-			if (!entry.isIntersecting) return;
+			if (!entry.isIntersecting) {
+				return;
+			}
 
 			if (entry.isIntersecting) {
 				setIsIntersecting(true);
@@ -27,7 +29,11 @@ const useAnimation = (animateName) => {
 		);
 
 		observer.observe(section.current);
-	}, [isIntersecting]);
+
+		return () => {
+			setIsIntersecting(false);
+		};
+	}, []);
 
 	const animationClasses = isIntersecting
 		? `${'animate__animated'} ${animateName}`

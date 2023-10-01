@@ -5,7 +5,7 @@ import SectionWrapper from '../../UI/SectionWrapper/SectionWrapper';
 import HeadingText from '../../UI/HeadingText/HeadingText';
 import Card from '../../UI/Card/Card';
 import MenuItem from './MenuItem';
-import useFetch from '../../../hooks/use-fetch';
+import useFetch from '../../../hooks/useFetch';
 import LoadingData from '../../UI/LoadingData/LoadingData';
 import ErrorData from '../../UI/ErrorData/ErrorData';
 

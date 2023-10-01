@@ -8,7 +8,7 @@ const useFetch = () => {
 		try {
 			setLoadingRequest(true);
 			const response = await fetch(requestConfig.url, {
-				method: requestConfig.method ? requestConfig.method : 'GET',
+				method: requestConfig.method || 'GET',
 				headers: requestConfig.header ? requestConfig.header : {},
 				body: requestConfig.body ? requestConfig.body : null,
 			});

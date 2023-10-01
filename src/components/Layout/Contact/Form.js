@@ -3,8 +3,8 @@ import classes from './Form.module.css';
 
 import Input from '../../UI/Input/Input';
 import ErrorForm from '../../UI/ErrorForm/ErrorForm';
-import useInput from '../../../hooks/use-input';
-import useValidation from '../../../hooks/use-validation';
+import useInput from '../../../hooks/useInput';
+import useValidation from '../../../hooks/useValidation';
 
 const Form = () => {
 	const [formIsValid, setFormIsValid] = useState(false);
@@ -14,8 +14,7 @@ const Form = () => {
 	const enteredPhoneInput = useRef();
 	const enteredMessageInput = useRef();
 
-	const { validateEmail, validatePhoneNumber, validateString } =
-		useValidation();
+	const { isEmail, isPhoneNumber, isString } = useValidation();
 
 	const {
 		inputIsValid: enteredNameIsValid,
@@ -23,7 +22,7 @@ const Form = () => {
 		inputChangeHandler: enteredNameChangeHandler,
 		inputBlurHandler: enteredNameBlurHandler,
 		inputResetHandler: enteredNameResetHandler,
-	} = useInput(validateString);
+	} = useInput(isString);
 
 	const {
 		inputIsValid: enteredEmailIsValid,
@@ -31,7 +30,7 @@ const Form = () => {
 		inputChangeHandler: enteredEmailChangeHandler,
 		inputBlurHandler: enteredEmailBlurHandler,
 		inputResetHandler: enteredEmailResetHandler,
-	} = useInput(validateEmail);
+	} = useInput(isEmail);
 
 	const {
 		inputIsValid: enteredPhoneIsValid,
@@ -39,7 +38,7 @@ const Form = () => {
 		inputChangeHandler: enteredPhoneChangeHandler,
 		inputBlurHandler: enteredPhoneBlurHandler,
 		inputResetHandler: enteredPhoneResetHandler,
-	} = useInput(validatePhoneNumber);
+	} = useInput(isPhoneNumber);
 
 	const {
 		inputIsValid: enteredMessageIsValid,
@@ -47,7 +46,7 @@ const Form = () => {
 		inputChangeHandler: enteredMessageChangeHandler,
 		inputBlurHandler: enteredMessageBlurHandler,
 		inputResetHandler: enteredMessageResetHandler,
-	} = useInput(validateString);
+	} = useInput(isString);
 
 	useEffect(() => {
 		if (
