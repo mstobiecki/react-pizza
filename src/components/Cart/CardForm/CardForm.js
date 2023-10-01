@@ -2,7 +2,7 @@ import { useRef, useState, useEffect, useContext, Fragment } from 'react';
 import classes from './CardForm.module.css';
 
 import Input from '../../UI/Input/Input';
-import useInput from '../../../hooks/useInput/useInput';
+import useInput from '../../../hooks/useInput';
 import useValidation from '../../../hooks/useValidation';
 import ErrorForm from '../../UI/ErrorForm/ErrorForm';
 import useFetch from '../../../hooks/useFetch';

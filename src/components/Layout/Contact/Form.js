@@ -3,7 +3,7 @@ import classes from './Form.module.css';
 
 import Input from '../../UI/Input/Input';
 import ErrorForm from '../../UI/ErrorForm/ErrorForm';
-import useInput from '../../../hooks/useInput/useInput';
+import useInput from '../../../hooks/useInput';
 import useValidation from '../../../hooks/useValidation';
 
 const Form = () => {

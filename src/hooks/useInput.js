@@ -1,32 +1,31 @@
 import { useReducer } from 'react';
-import { updateValueInput } from './updateValueInput';
 
 const initialStateInput = {
 	value: '',
 	isClicked: false,
 };
 
-const Action = {
-	Update: 'VALUE_INPUT',
-	Blur: 'BLUR_INPUT',
-	Reset: 'RESET_INPUT',
+const actionInput = {
+	update: 'VALUE_INPUT',
+	blur: 'BLUR_INPUT',
+	reset: 'RESET_INPUT',
 };
 
 const inputReducer = (state, { type, value }) => {
 	switch (type) {
-		case Action.Update: {
+		case actionInput.update: {
 			return {
 				value,
 				isClicked: state.isClicked,
 			};
 		}
-		case Action.Blur: {
+		case actionInput.blur: {
 			return {
 				value: state.value,
 				isClicked: true,
 			};
 		}
-		case Action.Reset: {
+		case actionInput.reset: {
 			return initialStateInput;
 		}
 		default:
@@ -44,15 +43,15 @@ const useInput = (validateValue) => {
 	const inputHasError = !valueIsValid && inputState.isClicked;
 
 	const inputChangeHandler = (event) => {
-		dispatchInput(updateValueInput(Action.Update, event.target.value));
+		dispatchInput({ type: actionInput.update, value: event.target.value });
 	};
 
 	const inputBlurHandler = () => {
-		dispatchInput({ type: Action.Blur });
+		dispatchInput({ type: actionInput.blur });
 	};
 
 	const inputResetHandler = () => {
-		dispatchInput({ type: Action.Reset });
+		dispatchInput({ type: actionInput.reset });
 	};
 
 	return {
