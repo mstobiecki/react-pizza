@@ -5,6 +5,7 @@ const hasError = (isError, className) =>
 	isError ? `${className} ${classes.invalid}` : `${className}`;
 
 const Input = forwardRef((props, ref) => {
+	console.log(props.onError);
 	const inputHasError = hasError(props.onError, classes.input);
 	const textAreaHasError = hasError(props.onError, classes.textarea);
 
@@ -14,6 +15,7 @@ const Input = forwardRef((props, ref) => {
 			onBlur={props.onBlur}
 			className={textAreaHasError}
 			ref={ref}
+			required
 		/>
 	) : (
 		<input
@@ -23,6 +25,7 @@ const Input = forwardRef((props, ref) => {
 			id={props.name}
 			type={props.type}
 			ref={ref}
+			required
 		/>
 	);
 

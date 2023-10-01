@@ -2,7 +2,7 @@ import classes from './MenuItem.module.css';
 
 import { useContext } from 'react';
 import { ShoppingCart } from '@phosphor-icons/react';
-import CartContex from '../../../store/cart-context';
+import CartContex from '../../../store/CartContext';
 
 const MenuItem = (props) => {
 	const ctxCart = useContext(CartContex);

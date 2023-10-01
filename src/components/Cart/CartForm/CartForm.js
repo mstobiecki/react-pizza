@@ -6,7 +6,7 @@ import useInput from '../../../hooks/useInput';
 import useValidation from '../../../hooks/useValidation';
 import ErrorForm from '../../UI/ErrorForm/ErrorForm';
 import useFetch from '../../../hooks/useFetch';
-import CartContex from '../../../store/cart-context';
+import CartContex from '../../../store/CartContext';
 import LoadingData from '../../UI/LoadingData/LoadingData';
 import ErrorData from '../../UI/ErrorData/ErrorData';
 

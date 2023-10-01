@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import classes from './CartButton.module.css';
 
 import { ShoppingCart } from '@phosphor-icons/react';
-import CartContex from '../../../store/cart-context';
+import CartContex from '../../../store/CartContext';
 
 const CartButton = (props) => {
 	const ctxCart = useContext(CartContex);
