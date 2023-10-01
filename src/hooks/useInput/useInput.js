@@ -1,28 +1,37 @@
 import { useReducer } from 'react';
+import { updateValueInput } from './updateValueInput';
 
 const initialStateInput = {
 	value: '',
 	isClicked: false,
 };
 
-const inputReducer = (state, action) => {
-	if (action.type === 'VALUE_INPUT') {
-		return {
-			value: action.value,
-			isClicked: state.isClicked,
-		};
+const Action = {
+	Update: 'VALUE_INPUT',
+	Blur: 'BLUR_INPUT',
+	Reset: 'RESET_INPUT',
+};
+
+const inputReducer = (state, { type, value }) => {
+	switch (type) {
+		case Action.Update: {
+			return {
+				value,
+				isClicked: state.isClicked,
+			};
+		}
+		case Action.Blur: {
+			return {
+				value: state.value,
+				isClicked: true,
+			};
+		}
+		case Action.Reset: {
+			return initialStateInput;
+		}
+		default:
+			return initialStateInput;
 	}
-
-	if (action.type === 'BLUR_INPUT') {
-		return {
-			value: state.value,
-			isClicked: true,
-		};
-	}
-
-	if (action.type === 'RESET_INPUT') return initialStateInput;
-
-	return initialStateInput;
 };
 
 const useInput = (validateValue) => {
@@ -35,15 +44,15 @@ const useInput = (validateValue) => {
 	const inputHasError = !valueIsValid && inputState.isClicked;
 
 	const inputChangeHandler = (event) => {
-		dispatchInput({ type: 'VALUE_INPUT', value: event.target.value });
+		dispatchInput(updateValueInput(Action.Update, event.target.value));
 	};
 
 	const inputBlurHandler = () => {
-		dispatchInput({ type: 'BLUR_INPUT' });
+		dispatchInput({ type: Action.Blur });
 	};
 
 	const inputResetHandler = () => {
-		dispatchInput({ type: 'RESET_INPUT' });
+		dispatchInput({ type: Action.Reset });
 	};
 
 	return {
