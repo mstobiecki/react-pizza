@@ -7,7 +7,7 @@ import CartItem from './CartItem/CartItem';
 import CartControls from './CartControls/CartControls';
 import CartTitle from './CartTitle/CartTitle';
 import Summary from './Summary/Summary';
-import CardForm from './CardForm/CardForm';
+import CartForm from './CartForm/CartForm';
 
 const Cart = (props) => {
 	const [orderFoodButton, setOrderFoodButton] = useState(false);
@@ -57,7 +57,7 @@ const Cart = (props) => {
 				<CartTitle />
 				{products}
 				{!emptyCart && <Summary totalCoast={ctxCart.totalAmount} />}
-				{orderFoodButton && <CardForm />}
+				{orderFoodButton && <CartForm />}
 				<CartControls
 					orderedFood={orderFoodButton}
 					emptyCart={emptyCart}

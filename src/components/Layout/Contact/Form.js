@@ -122,7 +122,10 @@ const Form = () => {
 			/>
 			{formIsComplete && <ErrorForm />}
 			<div className={classes['button-box']}>
-				<button className={classes.button} type='submit'>
+				<button
+					aria-label='wyślij wiadomość'
+					className={classes.button}
+					type='submit'>
 					Wyślij
 				</button>
 			</div>

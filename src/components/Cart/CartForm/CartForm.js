@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect, useContext, Fragment } from 'react';
-import classes from './CardForm.module.css';
+import classes from './CartForm.module.css';
 
 import Input from '../../UI/Input/Input';
 import useInput from '../../../hooks/useInput';
@@ -201,7 +201,10 @@ const CardForm = () => {
 			/>
 			{formIsComplete && <ErrorForm />}
 			<div className={classes.action}>
-				<button className={classes.button} type='submit'>
+				<button
+					aria-label='złóż zamówienie'
+					className={classes.button}
+					type='submit'>
 					Zamów pizzę 🍕
 				</button>
 			</div>

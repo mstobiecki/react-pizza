@@ -12,8 +12,11 @@ const CartButton = (props) => {
 	);
 
 	return (
-		<button onClick={props.onShowModal} className={classes.cart}>
-			<ShoppingCart className={classes.icon} />
+		<button
+			aria-label='koszyk'
+			onClick={props.onShowModal}
+			className={classes.cart}>
+			<ShoppingCart aria-hidden='true' className={classes.icon} />
 			<span className={classes.quantity}>{totalProductsInCart}</span>
 		</button>
 	);

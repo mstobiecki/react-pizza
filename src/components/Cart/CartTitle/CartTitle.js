@@ -5,7 +5,7 @@ const CartTitle = () => {
 	return (
 		<h2 className={classes.cart}>
 			<span>
-				<Basket className={classes.basket} />
+				<Basket aria-hidden='true' className={classes.basket} />
 			</span>
 			Co dziś dobrego zjesz?
 		</h2>

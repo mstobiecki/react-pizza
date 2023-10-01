@@ -26,9 +26,9 @@ const Navigation = () => {
 		: `${classes['navigation-wrapper']}`;
 
 	const navigationChangeIcon = navigationIsOpen ? (
-		<X className={classes['navigation-button']} />
+		<X aria-hidden='true' className={classes['navigation-button']} />
 	) : (
-		<List className={classes['navigation-button']} />
+		<List aria-hidden='true' className={classes['navigation-button']} />
 	);
 
 	return (
@@ -62,6 +62,7 @@ const Navigation = () => {
 				</ul>
 			</div>
 			<button
+				aria-label='nawigacja'
 				onClick={navigationHandler}
 				className={classes['navigation-control']}
 				type='button'>

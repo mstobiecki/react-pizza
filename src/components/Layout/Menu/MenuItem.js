@@ -22,8 +22,11 @@ const MenuItem = (props) => {
 				<p className={classes['pizza-description']}>{props.description}</p>
 			</div>
 			<div className={classes['pizza-actions']}>
-				<button onClick={addItemToCartHandler} className={classes.button}>
-					<ShoppingCart className={classes.icon} />
+				<button
+					aria-label='zamów'
+					onClick={addItemToCartHandler}
+					className={classes.button}>
+					<ShoppingCart aria-hidden='true' className={classes.icon} />
 					<span className={classes.price}>{props.price} zł</span>
 				</button>
 			</div>

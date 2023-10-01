@@ -6,16 +6,25 @@ const CartItem = (props) => {
 		<div className={classes.item}>
 			<Pizza className={classes.icon} />
 			<h3 className={classes.title}>{props.name}</h3>
-			<button onClick={props.onAddItemQuantity} className={classes.button}>
-				<PlusCircle className={classes.action} />
+			<button
+				aria-label='zwiększ ilość'
+				onClick={props.onAddItemQuantity}
+				className={classes.button}>
+				<PlusCircle aria-hidden='true' className={classes.action} />
 			</button>
 			<span className={classes.quantity}>{props.quantity}</span>
-			<button onClick={props.onDeleteItemQuantity} className={classes.button}>
-				<XCircle className={classes.action} />
+			<button
+				aria-label='zmniejsz ilość'
+				onClick={props.onDeleteItemQuantity}
+				className={classes.button}>
+				<XCircle aria-hidden='true' className={classes.action} />
 			</button>
 			<p className={classes.price}>{props.price} zł</p>
-			<button onClick={props.onRemoveItem} className={classes.delete}>
-				<Trash className={classes.action} />
+			<button
+				aria-label='usuń przedmiot z koszyka'
+				onClick={props.onRemoveItem}
+				className={classes.delete}>
+				<Trash aria-hidden='true' className={classes.action} />
 			</button>
 		</div>
 	);
